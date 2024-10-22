@@ -1,0 +1,25 @@
+body {
+    background-color: #654321; /* Example color */
+  }
+
+  .dashboard-layout {
+    min-height: 100vh;
+    background-color: #f0fff4;
+    color: #22543d;
+  }
+  
+  .dashboard-header {
+    background-color: #48bb78;
+    padding: 1rem;
+    color: white;
+  }
+  
+  .dashboard-header h1 {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: bold;
+  }
+  
+  .dashboard-main {
+    padding: 1rem;
+  }  

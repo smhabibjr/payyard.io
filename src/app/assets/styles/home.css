@@ -1,0 +1,22 @@
+.home-layout {
+    min-height: 100vh;
+    background-color: #ebf8ff;
+    color: #1a365d;
+  }
+  
+  .home-header {
+    background-color: #4299e1;
+    padding: 1rem;
+    color: white;
+  }
+  
+  .home-header h1 {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: bold;
+  }
+  
+  .home-main {
+    padding: 1rem;
+  }
+  
