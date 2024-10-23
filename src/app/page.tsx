@@ -1,6 +1,14 @@
+
 import Head from "next/head";
 import Navbar from "@/components/landing/Navbar";
 import Banner from "@/components/landing/banner";
+import Company from "@/components/landing/company";
+import Benefit from "@/components/landing/benefit";
+import Transaction from "@/components/landing/transaction";
+import Pricing from "@/components/landing/pricing";
+import Review from "@/components/landing/review";
+import Newsletter from "@/components/landing/newsletter";
+import Footer from "@/components/landing/footer";
 
 export default function Home() {
   return (
@@ -15,12 +23,21 @@ export default function Home() {
         <Banner />
       </header>
       
-      {/* 
+     
 
       <article>
         <Company />
         <Benefit />
         <Transaction />
+        <Pricing />
+        <Newsletter />
+      </article>
+        
+
+      <footer>
+        <Footer />
+      </footer>
+         {/* 
         <Pricing />
         <Review />
         <Newsletter />
