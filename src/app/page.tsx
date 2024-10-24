@@ -9,6 +9,7 @@ import Pricing from "@/components/landing/pricing";
 import Review from "@/components/landing/review";
 import Newsletter from "@/components/landing/newsletter";
 import Footer from "@/components/landing/footer";
+import Billing from "@/components/landing/Billing";
 
 export default function Home() {
   return (
@@ -29,8 +30,10 @@ export default function Home() {
         <Company />
         <Benefit />
         <Transaction />
+        <Billing />
         <Pricing />
         <Newsletter />
+        
       </article>
         
 
