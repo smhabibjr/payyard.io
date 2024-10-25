@@ -25,23 +25,21 @@ export default function Home() {
         <Navbar />
         <Banner />
       </header>
-      
-     
 
       <article>
         <Company />
-        <ShortExplainVideo />
         <Benefit />
+        <ShortExplainVideo />
         <Transaction />
         <Billing />
         <FAQ />
         <Newsletter />
       </article>
-        
 
       <footer>
         <Footer />
       </footer>
+
          {/* 
         <Pricing />
         <Review />

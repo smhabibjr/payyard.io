@@ -1,6 +1,8 @@
 "use client";
 import { useState } from "react";
 import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/24/outline";
+import AnimScroll from './animScroll';
+import { useEffect } from 'react';
 
 type FAQItem = {
   id: number;
@@ -43,18 +45,24 @@ function FAQs() {
     setOpenIndex(openIndex === index ? null : index);
   };
 
+  useEffect(() => {
+    AnimScroll(".faq-title", 100, ".faq-title");
+    AnimScroll(".faq-description", 50, ".faq-description");
+    AnimScroll(".faq-content", 300, ".faq-content");
+  }, []);
+
   return (
     <div className="w-full xl:w-container px-4 md:px-6 lg:px-0 py-16 mx-auto text-gray-400">
       <div className="title3 w-full lg:w-7/12 mx-auto text-center">
-        <h2 className="text-3xl md:text-4xl font-semibold leading-tight md:leading-relaxed text-white">
+        <h2 className="faq-title text-3xl md:text-4xl font-semibold leading-tight md:leading-relaxed text-white">
           More power and easy our pricing
         </h2>
-        <p className="mt-5 w-3/4 mx-auto text-slate-400 text-base">
+        <p className="faq-description mt-5 w-3/4 mx-auto text-slate-400 text-base">
           Before you buy our products, you can see what benefits you will get from buying our financial software.
         </p>
       </div>
 
-      <div className="space-y-4 mt-16">
+      <div className="space-y-4 mt-16 faq-content">
         {faqs.map((faq, index) => (
           <div
             key={faq.id}
