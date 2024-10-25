@@ -10,6 +10,8 @@ import Review from "@/components/landing/review";
 import Newsletter from "@/components/landing/newsletter";
 import Footer from "@/components/landing/footer";
 import Billing from "@/components/landing/Billing";
+import FAQ from "@/components/landing/faq";
+import ShortExplainVideo from "@/components/landing/ShortExplainVideo";
 
 export default function Home() {
   return (
@@ -28,12 +30,12 @@ export default function Home() {
 
       <article>
         <Company />
+        <ShortExplainVideo />
         <Benefit />
         <Transaction />
         <Billing />
-        <Pricing />
+        <FAQ />
         <Newsletter />
-        
       </article>
         
 
