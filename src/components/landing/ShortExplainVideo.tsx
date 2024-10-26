@@ -11,9 +11,9 @@ export default function VideoComponent() {
   const thumbnailUrl = `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
 
   useEffect(() => {
-    AnimScroll(".video-title", 100, ".video-title");
-    AnimScroll(".video-description", 50, ".video-description");
-    AnimScroll(".video-player", 300, ".video-player");
+    AnimScroll(".video-title", 100, { trigger: ".video-title" });
+    AnimScroll(".video-description", 50, { trigger: ".video-description" });
+    AnimScroll(".video-player", 300, { trigger: ".video-player" });
   }, []);
 
   return (

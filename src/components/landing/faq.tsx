@@ -46,9 +46,9 @@ function FAQs() {
   };
 
   useEffect(() => {
-    AnimScroll(".faq-title", 100, ".faq-title");
-    AnimScroll(".faq-description", 50, ".faq-description");
-    AnimScroll(".faq-content", 300, ".faq-content");
+    AnimScroll(".faq-title", 100, { trigger: ".faq-title" });
+    AnimScroll(".faq-description", 50, { trigger: ".faq-description" });
+    AnimScroll(".faq-content", 300, { trigger: ".faq-content" });
   }, []);
 
   return (

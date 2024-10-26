@@ -29,17 +29,17 @@ function Transaction() {
   ];
 
   useEffect(() => {
-    AnimScroll('.title2', 100, '.title2');
-    AnimScroll('#list-0', 50, '.play-1');
-    AnimScroll('#list-1', 50, '.play-2');
-    AnimScroll('#list-2', 50, '.play-3');
-    AnimScroll('.bg', 300, '#list-0');
-    AnimScroll('#img-1', 30, '#list-0');
-    AnimScroll('#img-2', 30, '#list-1');
-    AnimScroll('#img-3', 30, '#list-2');
-    AnimScroll('#img-4', 30, '#list-0');
-    AnimScroll('#img-5', 30, '#list-1');
-    AnimScroll('#img-6', 30, '.last');
+    AnimScroll('.title2', 100, { trigger: '.title2' });
+    AnimScroll('#list-0', 50, { trigger: '.play-1'});
+    AnimScroll('#list-1', 50, { trigger: '.play-2'});
+    AnimScroll('#list-2', 50, { trigger: '.play-3'});
+    AnimScroll('.bg', 300, { trigger: '#list-0'});
+    AnimScroll('#img-1', 30, { trigger: '#list-0'});
+    AnimScroll('#img-2', 30, { trigger: '#list-1'});
+    AnimScroll('#img-3', 30, { trigger: '#list-2'});
+    AnimScroll('#img-4', 30, { trigger: '#list-0'});
+    AnimScroll('#img-5', 30, { trigger: '#list-1'});
+    AnimScroll('#img-6', 30, { trigger: '.last'});
   }, []);
 
   return (

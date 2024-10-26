@@ -5,8 +5,8 @@ import AnimScroll from "./animScroll";
 function Company() {
 
     useEffect(() => {
-        AnimScroll(".anim1", 100, ".anim1");
-        AnimScroll(".anim2", 80, ".anim1");
+        AnimScroll(".anim1", 100, { trigger: ".anim1" });
+        AnimScroll(".anim2", 80, { trigger: ".anim2" });
     }, []); // Add empty dependency array to ensure it runs once on mount
 
     return (

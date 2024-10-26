@@ -7,11 +7,11 @@ import { useEffect } from 'react';
 const Billing: React.FC = () => {
   // useEffect for AnimScroll when scrolling to specific elements
   useEffect(() => {
-    AnimScroll(".billing-title", 100, ".billing-title");
-    AnimScroll(".billing-description", 50, ".billing-description");
-    AnimScroll(".billing-img", 300, ".billing-img");
-    AnimScroll(".apple-store", 30, ".billing-buttons");
-    AnimScroll(".google-play", 30, ".billing-buttons");
+    AnimScroll(".billing-title", 100, { trigger: ".billing-title" });
+    AnimScroll(".billing-description", 50, { trigger: ".billing-description" });
+    AnimScroll(".billing-img", 300, { trigger: ".billing-img" });
+    AnimScroll(".apple-store", 30, { trigger: ".apple-store"});
+    AnimScroll(".google-play", 30, { trigger: ".google-play" });
   }, []);
 
   return (

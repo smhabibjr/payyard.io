@@ -33,10 +33,10 @@ function Benefit() {
   ];
 
   useEffect(() => {
-    AnimScroll('.title', 100, '.title');
-    AnimScroll('#card-0', 100, '.content');
-    AnimScroll('#card-1', 150, '.content');
-    AnimScroll('#card-2', 200, '.content');
+    AnimScroll('.title', 100, { trigger: '.title' });
+    AnimScroll('#card-0', 100, { trigger: '.content' });
+    AnimScroll('#card-1', 150, { trigger: '.content' });
+    AnimScroll('#card-2', 200, { trigger: '.content' });
   }, []);
 
   return (

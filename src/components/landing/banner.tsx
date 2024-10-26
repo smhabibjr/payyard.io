@@ -7,9 +7,9 @@ function Banner() {
     
 
     useEffect(() => {
-        AnimScroll(".anim-1", 150,".anim-1")
-        AnimScroll(".anim-2", 200,".anim-1")
-        AnimScroll(".anim-3", 250,".anim-1")
+        AnimScroll(".anim-1", 150, { trigger: ".anim-1" });
+        AnimScroll(".anim-2", 200, { trigger: ".anim-2" });
+        AnimScroll(".anim-3", 250, { trigger: ".anim-3" });
     }, [])
 
     return (

@@ -5,8 +5,6 @@ import Banner from "@/components/landing/banner";
 import Company from "@/components/landing/company";
 import Benefit from "@/components/landing/benefit";
 import Transaction from "@/components/landing/transaction";
-import Pricing from "@/components/landing/pricing";
-import Review from "@/components/landing/review";
 import Newsletter from "@/components/landing/newsletter";
 import Footer from "@/components/landing/footer";
 import Billing from "@/components/landing/Billing";
@@ -39,16 +37,6 @@ export default function Home() {
       <footer>
         <Footer />
       </footer>
-
-         {/* 
-        <Pricing />
-        <Review />
-        <Newsletter />
-      </article>
-
-      <footer>
-        <Footer />
-      </footer> */}
     </div>
   );
 }
