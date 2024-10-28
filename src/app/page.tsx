@@ -1,9 +1,7 @@
-
 import Head from "next/head";
 import Navbar from "@/components/landing/Navbar";
 import Banner from "@/components/landing/banner";
-import Company from "@/components/landing/company";
-import Benefit from "@/components/landing/benefit";
+import HowWorks from "@/components/landing/HowWorks";
 import Transaction from "@/components/landing/transaction";
 import Newsletter from "@/components/landing/newsletter";
 import Footer from "@/components/landing/footer";
@@ -26,8 +24,7 @@ export default function Home() {
       </header>
 
       <article>
-        <Company />
-        <Benefit />
+        <HowWorks />
         <ShortExplainVideo />
         <Transaction />
         <Billing />

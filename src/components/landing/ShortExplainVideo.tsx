@@ -27,7 +27,7 @@ export default function VideoComponent() {
         </p>
       </div>
 
-      <div className="video-player relative aspect-video rounded-2xl overflow-hidden shadow-2xl group">
+      <div style={{ border: '1px solid rgba(255, 255, 255, 0.1)' }} className="video-player relative aspect-video rounded-2xl overflow-hidden shadow-2xl group">
         {/* Conditionally render the video iframe or thumbnail */}
         {isOpen ? (
           <iframe

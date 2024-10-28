@@ -10,7 +10,7 @@ type BenefitItem = {
   description: string;
 };
 
-function Benefit() {
+function HowWorks() {
   const data: BenefitItem[] = [
     {
       id: 1,
@@ -40,7 +40,7 @@ function Benefit() {
   }, []);
 
   return (
-    <div className="xl:w-container mx-auto my-24 md:my-40 text-white">
+    <div className="w-full xl:w-container mt-60 sm:mt-64 md:mt-36 lg:mt-72 xl:mt-72 px-4 md:px-6 lg:px-0 pb-16 mx-auto text-white">
       <div className="title x-full md:w-7/12 mx-auto text-center">
         <h2 className="text-3xl md:text-4xl font-semibold leading-relaxed">The benefit you get</h2>
         <p className="mt-2 w-3/4 mx-auto text-slate-400 text-base">
@@ -63,4 +63,4 @@ function Benefit() {
   );
 }
 
-export default Benefit;
+export default HowWorks;

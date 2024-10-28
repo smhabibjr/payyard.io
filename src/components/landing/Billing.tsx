@@ -1,6 +1,5 @@
 "use client"
 import { apple, bill, google } from "../../../public";
-import styles, { layout } from "./styles";
 import Image from "next/image";
 import AnimScroll from './animScroll';
 import { useEffect } from 'react';
@@ -15,7 +14,7 @@ const Billing: React.FC = () => {
   }, []);
 
   return (
-    <div className="w-full xl:w-container mx-auto px-6 lg:px-8 text-gray-400 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center text-sm mt-[10rem]">
+    <div className="w-full xl:w-container mx-auto px-6 lg:px-8 text-gray-400 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center text-sm mt-[6rem]">
       {/* Text content on the left side (on larger screens) */}
       <div className="text-center lg:text-left px-4 md:px-6 lg:px-0">
         <h2 className="billing-title text-3xl md:text-4xl text-white font-semibold leading-tight md:leading-relaxed mb-8">
