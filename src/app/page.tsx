@@ -10,6 +10,7 @@ import Footer from "@/components/landing/footer";
 import Billing from "@/components/landing/Billing";
 import FAQ from "@/components/landing/faq";
 import ShortExplainVideo from "@/components/landing/ShortExplainVideo";
+import JoinDiscord from "@/components/landing/joinDiscord";
 
 export default function Home() {
   return (
@@ -31,6 +32,7 @@ export default function Home() {
         <Transaction />
         <Billing />
         <FAQ />
+        <JoinDiscord />
         <Newsletter />
       </article>
 
