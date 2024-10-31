@@ -1,14 +1,13 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Play } from "lucide-react";
 import AnimScroll from './animScroll';
-import { useEffect } from 'react';
+import Image from 'next/image';
 
 export default function VideoComponent() {
   const [isOpen, setIsOpen] = useState(false);
   const videoId = "dK6eeiGC8Uw";
   const thumbnailUrl = `https://i1.ytimg.com/vi/${videoId}/maxresdefault.jpg`;
-                        
 
   useEffect(() => {
     AnimScroll(".video-title", 100, { trigger: ".video-title" });
@@ -28,7 +27,6 @@ export default function VideoComponent() {
       </div>
 
       <div style={{ border: '1px solid rgba(255, 255, 255, 0.1)' }} className="video-player relative aspect-video rounded-2xl overflow-hidden shadow-2xl group">
-        {/* Conditionally render the video iframe or thumbnail */}
         {isOpen ? (
           <iframe
             src={`https://www.youtube.com/embed/${videoId}?autoplay=1`}
@@ -39,9 +37,11 @@ export default function VideoComponent() {
           ></iframe>
         ) : (
           <>
-            <img
+            <Image
               src={thumbnailUrl}
               alt="Video Thumbnail"
+              width={1280} // Replace with actual dimensions of the image
+              height={720} // Replace with actual dimensions of the image
               className="w-full h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-105"
             />
             <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
