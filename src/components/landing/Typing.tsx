@@ -1,5 +1,5 @@
 import Typed from 'typed.js';
-import React, { Component } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 
 const Element = styled.span`

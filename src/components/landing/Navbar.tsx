@@ -1,9 +1,11 @@
+import Image from "next/image";
+import { logo } from "../../../public/images";
 const Navbar: React.FC = () => {
     return (
         <div className="w-full 2xl:w-large px-6 lg:px-28 2xl:px-0 mx-auto flex justify-between items-center pt-6 lg:pt-10">
             <div className="w-logo">
                 <a href="#">
-                    <img src="/logo.png" alt="logo fintech" />
+                    <Image src={logo} alt="logo fintech" />
                 </a>
             </div>
             <ul className="list-none text-white hidden xl:flex items-center">

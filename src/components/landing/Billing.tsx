@@ -1,5 +1,5 @@
 "use client"
-import { apple, bill, google } from "../../../public";
+import { apple, bill, google } from "../../../public/images";
 import Image from "next/image";
 import AnimScroll from './animScroll';
 import { useEffect } from 'react';

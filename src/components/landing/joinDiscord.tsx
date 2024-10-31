@@ -45,7 +45,7 @@ interface CommunityCardProps {
   link: string;
 }
 
-const CommunityCard: React.FC<CommunityCardProps> = ({ icon, title, description, link }) => (
+const CommunityCard: React.FC<CommunityCardProps> = ({ icon, title, description }) => (
   <div className="w-full max-w-sm bg-gray-800 rounded-lg shadow-lg p-6 text-center mx-auto transform transition-transform hover:scale-105 lg:hover:scale-110">
     {icon}
     <h3 className="mt-4 text-xl md:text-2xl font-semibold text-white">{title}</h3>

@@ -2,6 +2,8 @@
 import { useEffect } from 'react'
 import AnimScroll from "./animScroll"
 import Typing from './Typing'
+import { dashboard } from '../../../public/images'
+import Image from 'next/image'
 
 function Banner() {
     
@@ -27,7 +29,7 @@ function Banner() {
                     <button className="bg-btnLight text-blue w-44 mx-3 h-16 font-medium rounded-lg hover:shadow-xl transition-all">Watch a video</button>
                 </div>
             </div>
-            <img className="anim-3 mt-10 absolute left-0 right-0 md:relative md:mt-20 shadow-2xl" src="/dashboard.png" alt="software dashboard" />
+            <Image className="anim-3 mt-10 absolute left-0 right-0 md:relative md:mt-20 shadow-2xl" src={dashboard} alt="software dashboard" />
         </div>
     )
 }

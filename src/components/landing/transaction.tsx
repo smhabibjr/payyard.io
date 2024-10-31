@@ -2,6 +2,8 @@
 import { CheckIcon } from '@heroicons/react/24/solid';
 import { useEffect } from 'react';
 import AnimScroll from './animScroll';
+import Image from 'next/image';
+import { dash1, dash2, dash3, dash4, dash5, dash6 } from '../../../public/images';
 
 type TransactionItem = {
   id: number;
@@ -63,14 +65,14 @@ function Transaction() {
       </div>
       <div className="flex items-center gap-8 mx-10 xl:mx-0 xl:pr-20">
         <div className="flex flex-col items-start gap-7 z-10">
-          <img id="img-1" className="w-min" src="/dash1.png" alt="Dashboard 1" />
-          <img id="img-2" className="play-1 w-min" src="/dash2.png" alt="Dashboard 2" />
-          <img id="img-3" className="play-2 w-min" src="/dash3.png" alt="Dashboard 3" />
+          <Image id="img-1" className="w-min" src={dash1} alt="Dashboard 1" />
+          <Image id="img-2" className="play-1 w-min" src={dash2} alt="Dashboard 2" />
+          <Image id="img-3" className="play-2 w-min" src={dash3} alt="Dashboard 3" />
         </div>
         <div className="flex flex-col items-start gap-7 z-10">
-          <img id="img-4" className="w-min" src="/dash4.png" alt="Dashboard 4" />
-          <img id="img-5" className="w-min" src="/dash5.png" alt="Dashboard 5" />
-          <img id="img-6" className="play-3 w-min" src="/dash6.png" alt="Dashboard 6" />
+          <Image id="img-4" className="w-min" src={dash4} alt="Dashboard 4" />
+          <Image id="img-5" className="w-min" src={dash5} alt="Dashboard 5" />
+          <Image id="img-6" className="play-3 w-min" src={dash6} alt="Dashboard 6" />
         </div>
         <div className="bg hidden lg:block absolute w-[400px] h-[630px] bg-gradient rounded-2xl z-0 ml-44"></div>
       </div>

@@ -1,5 +1,4 @@
 "use client";
-
 import { useState } from "react";
 import { Play } from "lucide-react";
 import AnimScroll from './animScroll';
@@ -7,8 +6,9 @@ import { useEffect } from 'react';
 
 export default function VideoComponent() {
   const [isOpen, setIsOpen] = useState(false);
-  const videoId = "HisbShlgVuk";
-  const thumbnailUrl = `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
+  const videoId = "dK6eeiGC8Uw";
+  const thumbnailUrl = `https://i1.ytimg.com/vi/${videoId}/maxresdefault.jpg`;
+                        
 
   useEffect(() => {
     AnimScroll(".video-title", 100, { trigger: ".video-title" });
