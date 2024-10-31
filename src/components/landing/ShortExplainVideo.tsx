@@ -17,7 +17,7 @@ export default function VideoComponent() {
   }, []);
 
   return (
-    <div className="w-full max-w-6xl mx-auto px-4 py-16 text-gray-100">
+    <div className="w-full max-w-6xl mx-auto px-4 text-gray-100">
       <div className="title3 w-full lg:w-7/12 mx-auto text-center mb-12">
         <h2 className="video-title text-3xl md:text-4xl font-semibold leading-tight md:leading-relaxed text-white">
           More power and easy our pricing
