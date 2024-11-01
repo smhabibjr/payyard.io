@@ -24,6 +24,11 @@ const Navbar: React.FC = () => {
                 <li className="px-6">
                     <a className="hover:text-gray-200 transition-all" href="#">Contact</a>
                 </li>
+
+                <li className="px-6">
+                    <a className="hover:text-gray-200 transition-all" href="/sign-in">Sign In</a>
+                </li>
+                
             </ul>
             <div className="hidden xl:block">
                 <button className="bg-btnDark text-white w-44 h-16 font-medium rounded-lg hover:shadow-xl transition duration-200">Get started</button>
