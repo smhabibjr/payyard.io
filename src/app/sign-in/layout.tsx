@@ -1,14 +1,15 @@
-// layout.tsx
-import React from 'react';
+import React, { ReactNode } from 'react';
 
-export default function SignInLayout({
-    children,
-}: {
-    children: React.ReactNode;
-}) {
-    return (
-        <div className="flex min-h-screen justify-center items-center bg-gray-200 p-4">
-            {children}
-        </div>
-    );
-}
+type LayoutProps = {
+  children: ReactNode;
+};
+
+const Layout = ({ children }: LayoutProps) => {
+  return (
+    <div className="min-h-screen flex items-center justify-center bg-gray-100">
+      {children}
+    </div>
+  );
+};
+
+export default Layout;
