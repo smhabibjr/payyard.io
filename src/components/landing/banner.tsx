@@ -25,7 +25,9 @@ function Banner() {
                     By using Our software, Your life Will be easier because Now you can Manage your fincance easier than before and you can get A 50% Discount if you buy this software
                 </p>
                 <div className="anim-2 mt-7">
-                    <button className="bg-btnDark text-white w-44 mx-3 h-16 font-medium rounded-lg hover:shadow-xl transition-all">Get started</button>
+                    <button className="bg-btnDark text-white w-44 mx-3 h-16 font-medium rounded-lg hover:shadow-xl transition-all">
+                        <a className="hover:text-gray-200 transition-all" href="/sign-in">Sign Up</a>
+                    </button>
                     <button className="bg-btnLight text-blue w-44 mx-3 h-16 font-medium rounded-lg hover:shadow-xl transition-all">Watch a video</button>
                 </div>
             </div>
