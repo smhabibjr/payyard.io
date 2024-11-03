@@ -7,7 +7,6 @@ import Image from 'next/image'
 
 function Banner() {
     
-
     useEffect(() => {
         AnimScroll(".anim-1", 150, { trigger: ".anim-1" });
         AnimScroll(".anim-2", 200, { trigger: ".anim-2" });
