@@ -1399,6 +1399,13 @@ foreground-child@^3.1.0:
     cross-spawn "^7.0.0"
     signal-exit "^4.0.1"
 
+framer-motion@^11.11.11:
+  version "11.11.11"
+  resolved "https://registry.npmjs.org/framer-motion/-/framer-motion-11.11.11.tgz"
+  integrity sha512-tuDH23ptJAKUHGydJQII9PhABNJBpB+z0P1bmgKK9QFIssHGlfPd6kxMq00LSKwE27WFsb2z0ovY0bpUyMvfRw==
+  dependencies:
+    tslib "^2.4.0"
+
 function-bind@^1.1.2:
   version "1.1.2"
   resolved "https://registry.npmjs.org/function-bind/-/function-bind-1.1.2.tgz"

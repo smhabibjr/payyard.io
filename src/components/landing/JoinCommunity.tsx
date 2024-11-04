@@ -46,7 +46,7 @@ interface CommunityCardProps {
 }
 
 const CommunityCard: React.FC<CommunityCardProps> = ({ icon, title, description }) => (
-  <div className="w-full max-w-sm bg-gray-800 rounded-lg shadow-lg p-6 text-center mx-auto transform transition-transform hover:scale-105 lg:hover:scale-110">
+  <div className="w-full max-w-sm bg-gray-800 rounded-lg shadow-lg p-6 text-center mx-auto transform transition-transform hover:scale-105 lg:hover:scale-110 animated-border">
     {icon}
     <h3 className="mt-4 text-xl md:text-2xl font-semibold text-white">{title}</h3>
     <p className="mt-2 text-slate-400 text-sm md:text-base">{description}</p>

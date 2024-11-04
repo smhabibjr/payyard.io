@@ -26,7 +26,7 @@ export default function VideoComponent() {
         </p>
       </div>
 
-      <div style={{ border: '1px solid rgba(255, 255, 255, 0.1)' }} className="video-player relative aspect-video rounded-2xl overflow-hidden shadow-2xl group">
+      <div style={{ border: '1px solid rgba(255, 255, 255, 0.1)' }} className="animated-border video-player relative aspect-video rounded-2xl overflow-hidden shadow-2xl group ">
         {isOpen ? (
           <iframe
             src={`https://www.youtube.com/embed/${videoId}?autoplay=1`}

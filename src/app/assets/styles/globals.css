@@ -5,6 +5,21 @@ body,html{
     overflow-x: hidden
 }
 
+@property --border-angle {
+    inherits: false;
+    initial-value: 0deg;
+    syntax: '<angle>';
+}
+
+.animated-border {
+    @apply rounded-2xl border border-transparent animate-border;
+    background: linear-gradient(45deg, #172033, theme(colors.slate.800) 50%, #172033) padding-box,
+                conic-gradient(from var(--border-angle),
+                theme(colors.slate.600 / 0.48) 80%, theme(colors.indigo.500) 86%,
+                theme(colors.indigo.300) 90%, theme(colors.indigo.500) 94%,
+                theme(colors.slate.600 / 0.48)) border-box;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
