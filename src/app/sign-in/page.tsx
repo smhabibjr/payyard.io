@@ -14,6 +14,7 @@ const LoginPage: React.FC = () => {
       <div className="text-sm font-light text-[#3e62aa] pb-8 mx-auto">
         Login to your account on FinTech.
       </div>
+      
       <form className="flex flex-col" autoComplete="off">
         <div className="pb-2">
           <label htmlFor="email" className="block mb-2 text-sm font-medium text-[#111827]">
@@ -26,9 +27,16 @@ const LoginPage: React.FC = () => {
                 <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
               </svg>
             </span>
-            <input type="email" name="email" id="email" className="pl-12 mb-2 bg-gray-50 text-gray-600 border border-gray-300 rounded-lg ring-transparent focus:ring-1 focus:outline-none focus:ring-gray-400 w-full p-2.5 py-3 px-4" placeholder="name@company.com" />
+            <input
+              type="email"
+              name="email"
+              id="email"
+              className="pl-12 mb-2 bg-gray-50 text-gray-600 border border-gray-300 rounded-lg ring-transparent focus:ring-1 focus:outline-none focus:ring-gray-400 w-full p-2.5 py-3 px-4"
+              placeholder="name@company.com"
+            />
           </div>
         </div>
+
         <div className="pb-6">
           <label htmlFor="password" className="block mb-2 text-sm font-medium text-[#111827]">
             Password
@@ -42,12 +50,26 @@ const LoginPage: React.FC = () => {
                 <path d="m8.5 10 7 4" />
               </svg>
             </span>
-            <input type="password" name="password" id="password" placeholder="••••••••••" className="pl-12 mb-2 bg-gray-50 text-gray-600 border border-gray-300 rounded-lg ring-transparent focus:ring-1 focus:outline-none focus:ring-gray-400 w-full p-2.5 py-3 px-4" />
+            <input
+              type="password"
+              name="password"
+              id="password"
+              placeholder="••••••••••"
+              className="pl-12 mb-2 bg-gray-50 text-gray-600 border border-gray-300 rounded-lg ring-transparent focus:ring-1 focus:outline-none focus:ring-gray-400 w-full p-2.5 py-3 px-4"
+            />
           </div>
         </div>
-        <button type="submit" className="w-full text-white bg-[#3e34fe] font-medium rounded-lg text-sm px-5 py-2.5 text-center mb-6">
+
+        <button type="submit" className="w-full text-white bg-[#3e34fe] font-medium rounded-lg text-sm px-5 py-2.5 text-center mb-2">
           Login
         </button>
+
+        <div className="text-right text-sm mb-6">
+          <Link href="/forgot-password" className="text-[#3e34fe] hover:underline">
+            Forgot Password?
+          </Link>
+        </div>
+        
         <div className="text-sm font-light text-[#3e62aa] text-center">
           Don&#39;t have an account yet?{' '}
           <Link href="/sign-up" className="font-medium text-[#3e34fe] hover:underline">
@@ -55,11 +77,13 @@ const LoginPage: React.FC = () => {
           </Link>
         </div>
       </form>
+
       <div className="relative flex py-8 items-center">
         <div className="flex-grow border-t border-gray-200"></div>
         <span className="flex-shrink mx-4 font-medium text-gray-500">OR</span>
         <div className="flex-grow border-t border-gray-200"></div>
       </div>
+      
       <form>
         <div className="flex flex-row gap-2 justify-center">
           <button className="flex flex-row w-32 gap-2 bg-gray-600 p-2 rounded-md text-gray-200">
