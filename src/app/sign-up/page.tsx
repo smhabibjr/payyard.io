@@ -1,9 +1,9 @@
 import React from 'react';
 import Image from 'next/image';
-import Link from 'next/link'; // Import Link component
+import Link from 'next/link'; // Import Link from Next.js
 import { logo } from '../../../public/images';
 
-const LoginPage: React.FC = () => {
+const SignUpPage: React.FC = () => {
   return (
     <div className="flex flex-col w-full sm:w-3/4 md:w-2/3 lg:w-1/2 xl:w-1/3 2xl:w-1/4 mx-auto p-8 md:p-10 2xl:p-12 3xl:p-14 bg-white rounded-2xl shadow-xl">
       <div className="flex items-center gap-3 pb-4 justify-center">
@@ -12,7 +12,11 @@ const LoginPage: React.FC = () => {
       </div>
 
       <div className="text-sm font-light text-[#3e62aa] pb-8 mx-auto">
-        Login to your account on FinTech.
+        Create a new account on FinTech.
+      </div>
+      
+      <div className="text-xs text-red-600 mb-4">
+        Passwords should be at least 8 characters long and should contain a mixture of letters, numbers, and other characters.
       </div>
       
       <form className="flex flex-col" autoComplete="off">
@@ -27,17 +31,11 @@ const LoginPage: React.FC = () => {
                 <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
               </svg>
             </span>
-            <input
-              type="email"
-              name="email"
-              id="email"
-              className="pl-12 mb-2 bg-gray-50 text-gray-600 border border-gray-300 rounded-lg ring-transparent focus:ring-1 focus:outline-none focus:ring-gray-400 w-full p-2.5 py-3 px-4"
-              placeholder="name@company.com"
-            />
+            <input type="email" name="email" id="email" className="pl-12 mb-2 bg-gray-50 text-gray-600 border border-gray-300 rounded-lg ring-transparent focus:ring-1 focus:outline-none focus:ring-gray-400 w-full p-2.5 py-3 px-4" placeholder="name@company.com" />
           </div>
         </div>
-
-        <div className="pb-6">
+        
+        <div className="pb-2">
           <label htmlFor="password" className="block mb-2 text-sm font-medium text-[#111827]">
             Password
           </label>
@@ -50,31 +48,33 @@ const LoginPage: React.FC = () => {
                 <path d="m8.5 10 7 4" />
               </svg>
             </span>
-            <input
-              type="password"
-              name="password"
-              id="password"
-              placeholder="••••••••••"
-              className="pl-12 mb-2 bg-gray-50 text-gray-600 border border-gray-300 rounded-lg ring-transparent focus:ring-1 focus:outline-none focus:ring-gray-400 w-full p-2.5 py-3 px-4"
-            />
+            <input type="password" name="password" id="password" placeholder="••••••••••" className="pl-12 mb-2 bg-gray-50 text-gray-600 border border-gray-300 rounded-lg ring-transparent focus:ring-1 focus:outline-none focus:ring-gray-400 w-full p-2.5 py-3 px-4" />
           </div>
         </div>
 
-        <button type="submit" className="w-full text-white bg-[#3e34fe] font-medium rounded-lg text-sm px-5 py-2.5 text-center mb-2">
-          Login
-        </button>
-
-        <div className="text-right text-sm mb-6">
-          <Link href="/forgot-password" className="text-[#3e34fe] hover:underline">
-            Forgot Password?
-          </Link>
+        <div className="pb-6">
+          <label htmlFor="confirmPassword" className="block mb-2 text-sm font-medium text-[#111827]">
+            Confirm Password
+          </label>
+          <div className="relative text-gray-400">
+            <span className="absolute inset-y-0 left-0 flex items-center p-1 pl-3">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-square-asterisk">
+                <rect width="18" height="18" x="3" y="3" rx="2" />
+                <path d="M12 8v8" />
+                <path d="m8.5 14 7-4" />
+                <path d="m8.5 10 7 4" />
+              </svg>
+            </span>
+            <input type="password" name="confirmPassword" id="confirmPassword" placeholder="••••••••••" className="pl-12 mb-2 bg-gray-50 text-gray-600 border border-gray-300 rounded-lg ring-transparent focus:ring-1 focus:outline-none focus:ring-gray-400 w-full p-2.5 py-3 px-4" />
+          </div>
         </div>
-        
+
+        <button type="submit" className="w-full text-white bg-[#3e34fe] font-medium rounded-lg text-sm px-5 py-2.5 text-center mb-6">
+          Sign Up
+        </button>
         <div className="text-sm font-light text-[#3e62aa] text-center">
-          Don&#39;t have an account yet?{' '}
-          <Link href="/sign-up" className="font-medium text-[#3e34fe] hover:underline">
-            Sign Up
-          </Link>
+          Already have an account?{' '}
+          <Link href="/sign-in" className="font-medium text-[#3e34fe] hover:underline">Login</Link>
         </div>
       </form>
 
@@ -83,7 +83,7 @@ const LoginPage: React.FC = () => {
         <span className="flex-shrink mx-4 font-medium text-gray-500">OR</span>
         <div className="flex-grow border-t border-gray-200"></div>
       </div>
-      
+
       <form>
         <div className="flex flex-row gap-2 justify-center">
           <button className="flex flex-row w-32 gap-2 bg-gray-600 p-2 rounded-md text-gray-200">
@@ -97,7 +97,7 @@ const LoginPage: React.FC = () => {
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-X">
               <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
             </svg>
-            <span className="font-medium mx-auto">X</span>
+            <span className="font-medium mx-auto">Google</span>
           </button>
         </div>
       </form>
@@ -105,4 +105,4 @@ const LoginPage: React.FC = () => {
   );
 };
 
-export default LoginPage;
+export default SignUpPage;
