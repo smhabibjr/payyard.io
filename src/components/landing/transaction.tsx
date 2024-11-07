@@ -1,6 +1,5 @@
 "use client";
-
-import { CheckIcon } from "@heroicons/react/24/solid";
+import { MdCheck } from "react-icons/md";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { dash1, dash2, dash3, dash4, dash5, dash6 } from "../../../public/images";
@@ -50,7 +49,7 @@ function Transaction() {
             whileInView={{ x: 0, opacity: 1 }}
             transition={{ duration: 1, ease: "easeOut", delay: i * 0.2 }}
           >
-            <CheckIcon className="w-8 bg-midBlue text-white rounded-full p-2" />
+            <MdCheck className="w-8 h-8 bg-midBlue text-white rounded-full p-2" />
             <div>
               <p className="text-xl font-medium">{content.title}</p>
               <p className="mt-2 text-base leading-loose text-slate-400 group-hover:text-white">

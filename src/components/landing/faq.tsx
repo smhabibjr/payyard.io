@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/24/outline";
+import { MdExpandMore, MdExpandLess } from "react-icons/md"; // Updated icons
 import { motion } from "framer-motion";
 
 type FAQItem = {
@@ -60,9 +60,9 @@ function FAQs() {
             >
               <span>{faq.question}</span>
               {openIndex === index ? (
-                <ChevronUpIcon className="w-6 h-6 text-midBlue" />
+                <MdExpandLess className="w-6 h-6 text-midBlue" />
               ) : (
-                <ChevronDownIcon className="w-6 h-6 text-gray-500" />
+                <MdExpandMore className="w-6 h-6 text-gray-500" />
               )}
             </button>
             {openIndex === index && (
@@ -70,7 +70,7 @@ function FAQs() {
                 className="mt-4 text-slate-400 text-sm leading-relaxed"
                 initial={{ y: -10, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.5, ease: "easeOut" }}
+                transition={{ duration: 1, ease: "easeOut" }} // Slower animation duration
               >
                 {faq.answer}
               </motion.p>
