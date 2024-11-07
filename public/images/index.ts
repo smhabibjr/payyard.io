@@ -14,6 +14,9 @@ import instagram_logo from "./instagram-logo.png";
 import linkedin_logo from "./linkedin-logo.png";
 import logo from "./logo.png";
 import twitter_logo from "./twitter-logo.png";
+import withdraw_funds from "./withdraw-funds.gif";
+import send_invoice from "./send-invoices.gif";
+import receive_payment from "./receive-payment.gif";
 
 export {
   apple,
@@ -31,5 +34,8 @@ export {
   instagram_logo,
   linkedin_logo,
   logo,
-  twitter_logo
+  twitter_logo,
+  withdraw_funds,
+  send_invoice,
+  receive_payment
 };
