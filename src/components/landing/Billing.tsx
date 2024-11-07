@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 
 const Billing: React.FC = () => {
   return (
-    <div className="w-full xl:w-container mx-auto px-6 lg:px-8 text-gray-400 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center text-sm mt-[6rem]">
+    <div className="w-full xl:w-container mx-auto px-6 lg:px-8 text-gray-400 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center text-sm mt-[8rem]">
       {/* Text content on the left side (on larger screens) */}
       <div className="text-center lg:text-left px-4 md:px-6 lg:px-0">
         <motion.h2

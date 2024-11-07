@@ -28,8 +28,8 @@ function HowWorks() {
     {
       id: 3,
       icon: <Image src={withdraw_funds} alt="Receive Payment Icon" width={100} height={100} className="rounded-lg" />,
-      title: "Receive Payments",
-      description: "Payments made by clients are credited to your Payyard.io account for secure processing.",
+      title: "Withdraw Funds",
+      description: "Request to withdraw your funds to your bank in Bangladesh, hassle-free.",
     }
   ];
 
@@ -45,7 +45,7 @@ function HowWorks() {
           How It Works
         </motion.h2>
         <motion.p
-          className="mt-2 w-3/4 mx-auto text-slate-400 text-base"
+          className="mt-5 w-3/4 mx-auto text-slate-400 text-base"
           initial={{ y: 150, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
@@ -54,7 +54,7 @@ function HowWorks() {
         </motion.p>
       </div>
 
-      <div className="card-list mt-16 text-center md:text-left flex flex-wrap justify-center gap-10">
+      <div className="card-list mt-12 text-center md:text-left flex flex-wrap justify-center gap-10">
         {data.map((step, i) => (
           <motion.div
             key={step.id}

@@ -31,7 +31,7 @@ function Transaction() {
   ];
 
   return (
-    <div className="w-full xl:w-container px-0 md:px-32 lg:px-12 xl:px-0 mx-auto overflow-hidden text-white flex flex-wrap lg:flex-nowrap justify-center xl:justify-between items-center gap-24 mt-[6rem]">
+    <div className="w-full xl:w-container px-0 md:px-32 lg:px-12 xl:px-0 mx-auto overflow-hidden text-white flex flex-wrap lg:flex-nowrap justify-center xl:justify-between items-center gap-24 mt-[8rem]">
       <div className="w-full lg:w-11/12">
         <motion.h2
           className="text-3xl md:text-4xl text-center lg:text-left font-semibold leading-tight md:leading-relaxed mb-16"
