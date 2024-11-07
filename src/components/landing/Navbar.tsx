@@ -6,25 +6,25 @@ const Navbar: React.FC = () => {
     return (
         <div className="w-full 2xl:w-large px-6 lg:px-28 2xl:px-0 mx-auto flex justify-between items-center pt-6 lg:pt-10">
             <div className="w-logo">
-                <a href="/">
+                <Link href="/">
                     <Image src={logo} alt="logo fintech" />
-                </a>
+                </Link>
             </div>
             <ul className="list-none text-white hidden xl:flex items-center">
                 <li className="px-6">
-                    <a className="hover:text-gray-200 transition-all" href="#">Home</a>
+                    <Link className="hover:text-gray-200 transition-all" href="#">Home</Link>
                 </li>
                 <li className="px-6">
-                    <a className="hover:text-gray-200 transition-all" href="#">Services</a>
+                    <Link className="hover:text-gray-200 transition-all" href="#">Services</Link>
                 </li>
                 <li className="px-6">
-                    <a className="hover:text-gray-200 transition-all" href="#">Pricing</a>
+                    <Link className="hover:text-gray-200 transition-all" href="#">Pricing</Link>
                 </li>
                 <li className="px-6">
-                    <a className="hover:text-gray-200 transition-all" href="#">Feature</a>
+                    <Link className="hover:text-gray-200 transition-all" href="#">Feature</Link>
                 </li>
                 <li className="px-6">
-                    <a className="hover:text-gray-200 transition-all" href="#">Contact</a>
+                    <Link className="hover:text-gray-200 transition-all" href="#">Contact</Link>
                 </li>
             </ul>
             <div className="hidden xl:block">

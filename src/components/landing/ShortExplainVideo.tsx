@@ -17,7 +17,6 @@ export default function VideoComponent() {
   const videoRef = useRef(null);
 
   // Trigger animation when in view
-  const containerInView = useInView(containerRef, { once: false });
   const titleInView = useInView(titleRef, { once: false });
   const videoInView = useInView(videoRef, { once: false });
 

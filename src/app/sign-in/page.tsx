@@ -47,7 +47,7 @@ const LoginPage: React.FC = () => {
           Login
         </button>
         <div className="text-sm font-light text-[#3e62aa] text-center">
-          Don't have an account yet? <a href="#" className="font-medium text-[#3e34fe] hover:underline">Sign Up</a>
+          Don&apos;t  have an account yet? <a href="#" className="font-medium text-[#3e34fe] hover:underline">Sign Up</a>
         </div>
       </form>
       <div className="relative flex py-8 items-center">
