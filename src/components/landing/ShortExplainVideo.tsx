@@ -1,19 +1,12 @@
 "use client";
 import { useState, useEffect } from "react";
 import { Play } from "lucide-react";
-import AnimScroll from './animScroll';
 import Image from 'next/image';
 
 export default function VideoComponent() {
   const [isOpen, setIsOpen] = useState(false);
   const videoId = "dK6eeiGC8Uw";
   const thumbnailUrl = `https://i1.ytimg.com/vi/${videoId}/maxresdefault.jpg`;
-
-  useEffect(() => {
-    AnimScroll(".video-title", 100, { trigger: ".video-title" });
-    AnimScroll(".video-description", 50, { trigger: ".video-description" });
-    AnimScroll(".video-player", 300, { trigger: ".video-player" });
-  }, []);
 
   return (
     <div className="w-full max-w-6xl mx-auto px-4 text-gray-100">

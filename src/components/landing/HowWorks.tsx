@@ -1,9 +1,10 @@
-"use client"
-import { UsersIcon, ShoppingCartIcon, ClockIcon } from '@heroicons/react/24/outline';
-import { useEffect } from 'react';
-import AnimScroll from './animScroll';
+"use client";
 
-type BenefitItem = {
+import { motion } from "framer-motion";
+import Image from "next/image"; // Import Next.js Image component for optimized images
+import {  withdraw_funds, send_invoice, receive_payment } from "../../../public/images";
+
+type StepItem = {
   id: number;
   icon: JSX.Element;
   title: string;
@@ -11,52 +12,66 @@ type BenefitItem = {
 };
 
 function HowWorks() {
-  const data: BenefitItem[] = [
-    {
-      id: 1,
-      icon: <UsersIcon className="w-16 bg-gradient rounded-lg p-4" />,
-      title: 'Can be used by more than One Person',
-      description: 'Every first purchase You will get a special discount from us of 50% From the original Price',
-    },
+  const data: StepItem[] = [
     {
       id: 2,
-      icon: <ShoppingCartIcon className="w-16 bg-gradient rounded-lg p-4" />,
-      title: '50% Discount On Every Purchase',
-      description: 'Every first purchase You will get a special discount from us of 50% From the original Price',
+      icon: <Image src={send_invoice} alt="Send Invoice Icon" width={150} height={100} className="rounded-lg" />,
+      title: "Generate and Send Invoices",
+      description: "Easily create customized invoices and send them directly to your foreign clients.",
     },
     {
       id: 3,
-      icon: <ClockIcon className="w-16 bg-gradient rounded-lg p-4" />,
-      title: '24 Hours Customer service',
-      description: 'Every first purchase You will get a special discount from us of 50% From the original Price',
+      icon: <Image src={receive_payment} alt="Receive Payment Icon" width={100} height={100} className="rounded-lg" />,
+      title: "Receive Payments",
+      description: "Payments made by clients are credited to your Payyard.io account for secure processing.",
     },
+    {
+      id: 3,
+      icon: <Image src={withdraw_funds} alt="Receive Payment Icon" width={100} height={100} className="rounded-lg" />,
+      title: "Receive Payments",
+      description: "Payments made by clients are credited to your Payyard.io account for secure processing.",
+    }
   ];
-
-  useEffect(() => {
-    AnimScroll('.title', 100, { trigger: '.title' });
-    AnimScroll('#card-0', 100, { trigger: '.content' });
-    AnimScroll('#card-1', 150, { trigger: '.content' });
-    AnimScroll('#card-2', 200, { trigger: '.content' });
-  }, []);
 
   return (
     <div className="w-full xl:w-container mt-60 sm:mt-64 md:mt-36 lg:mt-72 xl:mt-72 px-4 md:px-6 lg:px-0 pb-16 mx-auto text-white">
       <div className="title x-full md:w-7/12 mx-auto text-center">
-        <h2 className="text-3xl md:text-4xl font-semibold leading-relaxed">The benefit you get</h2>
-        <p className="mt-2 w-3/4 mx-auto text-slate-400 text-base">
-          Before you buy our Products you can see what benefits you will get From buying our Financial Software
-        </p>
+        <motion.h2
+          className="text-3xl md:text-4xl font-semibold leading-relaxed"
+          initial={{ y: 150, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{ duration: 1, ease: "easeOut" }}
+        >
+          How It Works
+        </motion.h2>
+        <motion.p
+          className="mt-2 w-3/4 mx-auto text-slate-400 text-base"
+          initial={{ y: 150, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
+        >
+          Discover the simple steps to start invoicing, receiving payments, and withdrawing funds seamlessly.
+        </motion.p>
       </div>
+
       <div className="card-list mt-16 text-center md:text-left flex flex-wrap justify-center gap-10">
-        {data.map((content, i) => (
-          <div id={`card-${i}`} key={content.id} className="group hover:bg-midBlue rounded-2xl transition duration-200 ease-out p-8 w-[360px]">
-            <span className="flex justify-center md:justify-start">{content.icon}</span>
-            <h3 className="mt-8 text-2xl font-medium">{content.title}</h3>
-            <p className="content my-4 text-sm leading-loose text-slate-400 group-hover:text-white">{content.description}</p>
+        {data.map((step, i) => (
+          <motion.div
+            key={step.id}
+            className="group hover:bg-midBlue rounded-2xl transition duration-200 ease-out p-8 w-[360px]"
+            initial={{ y: 150, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 1, ease: "easeOut", delay: i * 0.2 }}
+          >
+            <span style={{ height: "80px"}} className="flex justify-center md:justify-start">{step.icon}</span>
+            <h3 className="mt-8 text-2xl font-medium">{step.title}</h3>
+            <p className="content my-4 text-sm leading-loose text-slate-400 group-hover:text-white">
+              {step.description}
+            </p>
             <a className="font-medium underline" href="#">
-              Read More
+              Learn More
             </a>
-          </div>
+          </motion.div>
         ))}
       </div>
     </div>

@@ -12,15 +12,24 @@ function Banner() {
         <div className="w-full xl:w-container px-8 lg:px-20 xl:px-0 mx-auto text-white text-center mt-16 xl:mt-28">
             <div className="w-full lg:w-4/6 mx-auto">
                 
-                <motion.h1
+                <motion.h2
                     className="anim-1 text-4xl md:text-5xl font-bold leading-tight md:leading-tight"
                     initial={{ y: 150, opacity: 0 }}
                     whileInView={{ y: 0, opacity: 1 }}
                     transition={{ duration: 1, ease: "easeOut" }}
                 >
-                    Help your life to make it easier to manage finances <br className="sm:hidden" />
+                    Empowering Freelancers to Get Paid.<br className="sm:hidden" />
+                    {/* <Typing /> */}
+                </motion.h2>
+                <motion.h6
+                    className="anim-1 text-1xl md:text-3xl font-bold leading-tight md:leading-tight"
+                    initial={{ y: 150, opacity: 0 }}
+                    whileInView={{ y: 0, opacity: 1 }}
+                    transition={{ duration: 1, ease: "easeOut" }}
+                >
+                    The missing platform for <br className="sm:hidden" />
                     <Typing />
-                </motion.h1>
+                </motion.h6>
 
                 <motion.p
                     className="anim-2 mt-5 text-base md:text-lg leading-normal md:leading-relaxed"
@@ -28,9 +37,8 @@ function Banner() {
                     whileInView={{ y: 0, opacity: 1 }}
                     transition={{ duration: 1, ease: "easeOut" }}
                 >
-                    By using Our software, Your life Will be easier because Now you can Manage your fincance easier than before and you can get A 50% Discount if you buy this software
+                    Simplify invoicing, manage payments securely, and easily transfer funds home. Join the platform made just for you.
                 </motion.p>
-
                 <motion.div
                     className="anim-2 mt-7"
                     initial={{ y: 200, opacity: 0 }}

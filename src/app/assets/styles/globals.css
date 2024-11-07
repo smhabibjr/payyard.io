@@ -19,6 +19,12 @@ body,html{
                 theme(colors.indigo.300) 90%, theme(colors.indigo.500) 94%,
                 theme(colors.slate.600 / 0.48)) border-box;
 }
+.gradient__text {
+    background: var(--gradient-text);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
 
 @tailwind base;
 @tailwind components;

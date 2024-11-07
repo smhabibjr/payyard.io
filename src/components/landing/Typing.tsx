@@ -6,7 +6,7 @@ const Element = styled.span`
   text-align: center;
 `;
 
-const words: string[] = ['startup.', 'website.', 'business.'];
+const words: string[] = ['Freelancers.', 'Creators.', 'Remote teams.'];
 
 class Typing extends React.Component {
   private el: HTMLSpanElement | null = null; // Ref for the span element
@@ -15,8 +15,8 @@ class Typing extends React.Component {
   componentDidMount() {
     const options = {
       strings: words,
-      typeSpeed: 65,
-      backSpeed: 65,
+      typeSpeed: 90,
+      backSpeed: 90,
       loop: true,
       showCursor: true,
       cursorChar: '|',
