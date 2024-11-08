@@ -14,18 +14,18 @@ function Transaction() {
   const data: TransactionItem[] = [
     {
       id: 1,
-      title: "Paid Invoice",
-      description: "With the paid invoice you can check any monthly bills that have been paid by you",
+      title: "Invoice Tracking",
+      description: "Easily view and manage all paid invoices, keeping your billing organized and accessible.",
     },
     {
       id: 2,
-      title: "Monthly Progress",
-      description: "The Monthly Progress Feature in the invoice can track your speed in paying bills each month",
+      title: "Monthly Payment Insights",
+      description: "Stay on top of your payment habits with monthly progress insights, helping you track bills and plan better.",
     },
     {
       id: 3,
-      title: "Modern UI",
-      description: "With the modern user interface, it makes it easier for you to make payments due to its simplicity",
+      title: "Intuitive Interface",
+      description: "Our sleek, modern UI ensures smooth navigation, making it easier to handle transactions efficiently.",
     },
   ];
 
@@ -38,7 +38,7 @@ function Transaction() {
           whileInView={{ y: 0, opacity: 1 }}
           transition={{ duration: 1, ease: "easeOut" }}
         >
-          Monitor Transaction Live Through the Software
+          Track Your Transactions in Real-Time
         </motion.h2>
 
         {data.map((content, i) => (

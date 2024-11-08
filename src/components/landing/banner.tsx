@@ -4,8 +4,23 @@ import { dashboard } from '../../../public/images'
 import Image from 'next/image'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
+import { useEffect, useState } from 'react'
+import { AnimatePresence } from 'framer-motion'
+
+
+const targetAudiences = ["freelancers", "creators", "small teams"]
 
 function Banner() {
+
+    const [currentIndex, setCurrentIndex] = useState(0)
+
+    useEffect(() => {
+      const interval = setInterval(() => {
+        setCurrentIndex((prevIndex) => (prevIndex + 1) % targetAudiences.length)
+      }, 3000) // Change every 3 seconds
+  
+      return () => clearInterval(interval)
+    }, [])
 
     return (
         <>
@@ -18,26 +33,27 @@ function Banner() {
                     whileInView={{ y: 0, opacity: 1 }}
                     transition={{ duration: 1, ease: "easeOut" }}
                 >
-                    Empowering Freelancers to Get Paid.<br className="sm:hidden" />
-                    {/* <Typing /> */}
+                    The missing platform for &nbsp; <br />
+                     <AnimatePresence mode="wait">
+                        <motion.span
+                            key={currentIndex}
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            exit={{ opacity: 0, y: -20 }}
+                            transition={{ duration: 0.5 }}
+                            className="inline-block"
+                            >
+                            {targetAudiences[currentIndex]}
+                            </motion.span>
+                        </AnimatePresence>
                 </motion.h2>
-                <motion.h6
-                    className="anim-1 text-1xl md:text-3xl font-bold leading-tight md:leading-tight"
-                    initial={{ y: 150, opacity: 0 }}
-                    whileInView={{ y: 0, opacity: 1 }}
-                    transition={{ duration: 1, ease: "easeOut" }}
-                >
-                    The missing platform for <br className="sm:hidden" />
-                    <Typing />
-                </motion.h6>
-
                 <motion.p
-                    className="anim-2 mt-5 text-base md:text-lg leading-normal md:leading-relaxed"
+                    className="mt-5 text-base md:text-lg leading-normal md:leading-relaxed"
                     initial={{ y: 200, opacity: 0 }}
                     whileInView={{ y: 0, opacity: 1 }}
                     transition={{ duration: 1, ease: "easeOut" }}
                 >
-                    Simplify invoicing, manage payments securely, and easily transfer funds home. Join the platform made just for you.
+                    Simplify your invoicing, accept payments securely, and transfer funds home—an all-in-one platform built for freelancers and small businesses.
                 </motion.p>
                 <motion.div
                     className="anim-2 mt-7"
@@ -50,7 +66,7 @@ function Banner() {
                             <span className="hover:text-gray-200 transition-all">Sign Up</span>
                         </button>
                     </Link>
-                    <button className="bg-btnLight text-blue w-44 mx-3 h-16 font-medium rounded-lg hover:shadow-xl transition-all">Watch a video</button>
+                    
                 </motion.div>
             </div>
 

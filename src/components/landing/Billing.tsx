@@ -15,7 +15,7 @@ const Billing: React.FC = () => {
           whileInView={{ y: 0, opacity: 1 }}
           transition={{ duration: 1, ease: "easeOut" }}
         >
-          Easily Control Your Billing & Invoicing
+          Get Paid Securely with PayPal
         </motion.h2>
         <motion.p
           className="text-base leading-loose text-slate-400 max-w-[470px] mx-auto lg:mx-0 mb-6"
@@ -23,9 +23,9 @@ const Billing: React.FC = () => {
           whileInView={{ y: 0, opacity: 1 }}
           transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
         >
-          Elit enim sed massa etiam. Mauris eu adipiscing ultrices ametodio aenean neque. Integer Fusce ipsum rhoncus porttitor integer platea placerat.
+          Generate detailed invoices for your clients, who can pay directly through PayPal. No more payment delays—our platform ensures your earnings reach you quickly and securely.
         </motion.p>
-        <div className="flex flex-row justify-center lg:justify-start gap-4">
+{/*         <div className="flex flex-row justify-center lg:justify-start gap-4">
           <motion.div
             className="w-[128px] h-[42px] cursor-pointer"
             initial={{ y: 50, opacity: 0 }}
@@ -42,7 +42,7 @@ const Billing: React.FC = () => {
           >
             <Image src={google} alt="google_play" className="object-contain" />
           </motion.div>
-        </div>
+        </div> */}
       </div>
 
       {/* Image on the right side (on larger screens) */}

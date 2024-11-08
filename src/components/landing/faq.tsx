@@ -11,11 +11,11 @@ type FAQItem = {
 };
 
 const faqs: FAQItem[] = [
-  { id: 1, question: "How can I subscribe to the newsletter?", answer: "You can subscribe by entering your email in the subscription field and clicking 'Get started'." },
-  { id: 2, question: "How often are newsletters sent?", answer: "We send newsletters monthly, with additional updates for special announcements or promotions." },
-  { id: 3, question: "Can I unsubscribe from the newsletter?", answer: "Yes, you can unsubscribe anytime via the 'Unsubscribe' link at the bottom of each newsletter email." },
-  { id: 4, question: "Is my email address shared with third parties?", answer: "No, we prioritize your privacy and do not share your email address with third parties." },
-  { id: 5, question: "Do I need an account to subscribe?", answer: "No account is needed. Simply provide your email address, and you're all set!" },
+  { id: 1, question: "How can I create an invoice for my client?", answer: "Go to your dashboard and select the 'Invoice' option. Fill in the required details, such as the client’s information, amount, and description, and then send it directly from the platform using our PayPal integration." },
+  { id: 2, question: "How long does it take to receive payment after a client pays through PayPal?", answer: "Payments made by clients through PayPal are typically credited to our platform account instantly. You can monitor payment statuses on your dashboard, and funds will be available for withdrawal once processed." },
+  { id: 3, question: "Can I withdraw my earnings to a Bangladeshi bank account?", answer: "Yes, after receiving payments from clients, you can initiate a withdrawal request. We process the withdrawal and transfer funds to your designated Bangladeshi bank account." },
+  { id: 4, question: "Is there a fee for using this platform?", answer: "Yes, there’s a small service fee to cover transaction and maintenance costs. This fee will be outlined during invoicing and withdrawal steps so that you’re fully informed." },
+  { id: 5, question: "What happens if a client doesn’t pay the invoice?", answer: "If a client does not pay, you can send them a reminder directly from your dashboard. Unfortunately, until payment is made, the funds won’t be available for withdrawal. We recommend following up with clients regularly to ensure timely payments." },
 ];
 
 function FAQs() {
@@ -34,7 +34,7 @@ function FAQs() {
           whileInView={{ y: 0, opacity: 1 }}
           transition={{ duration: 1, ease: "easeOut" }}
         >
-          More power and easy our pricing
+          Frequently Asked Questions
         </motion.h2>
         <motion.p
           className="mt-5 w-3/4 mx-auto text-slate-400 text-base"
@@ -42,7 +42,7 @@ function FAQs() {
           whileInView={{ y: 0, opacity: 1 }}
           transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
         >
-          Before you buy our products, you can see what benefits you will get from buying our financial software.
+          Find answers to common questions about invoicing, receiving payments, and withdrawing funds as a freelancer on our platform. If you need further assistance, we’re here to help.
         </motion.p>
       </div>
 

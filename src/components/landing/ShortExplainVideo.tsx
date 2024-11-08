@@ -30,10 +30,10 @@ export default function VideoComponent() {
         transition={{ duration: 1, ease: "easeOut" }}
       >
         <h2 className="video-title text-3xl md:text-4xl font-semibold leading-tight md:leading-relaxed text-white">
-          More power and easy our pricing
+          Explained in 120 Seconds
         </h2>
         <p className="video-description mt-5 w-3/4 mx-auto text-slate-400 text-base">
-          Before you buy our products, you can see what benefits you will get from buying our financial software.
+          See how you can create invoices, receive payments, and withdraw funds—all within minutes.
         </p>
       </motion.div>
 

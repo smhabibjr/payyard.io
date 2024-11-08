@@ -10,23 +10,7 @@ const Navbar: React.FC = () => {
                     <Image src={logo} alt="logo fintech" />
                 </Link>
             </div>
-            <ul className="list-none text-white hidden xl:flex items-center">
-                <li className="px-6">
-                    <Link className="hover:text-gray-200 transition-all" href="#">Home</Link>
-                </li>
-                <li className="px-6">
-                    <Link className="hover:text-gray-200 transition-all" href="#">Services</Link>
-                </li>
-                <li className="px-6">
-                    <Link className="hover:text-gray-200 transition-all" href="#">Pricing</Link>
-                </li>
-                <li className="px-6">
-                    <Link className="hover:text-gray-200 transition-all" href="#">Feature</Link>
-                </li>
-                <li className="px-6">
-                    <Link className="hover:text-gray-200 transition-all" href="#">Contact</Link>
-                </li>
-            </ul>
+            
             <div className="hidden xl:block">
                 <Link href="/sign-in">
                     <button className="bg-btnDark text-white w-44 h-16 font-medium rounded-lg hover:shadow-xl transition duration-200">
