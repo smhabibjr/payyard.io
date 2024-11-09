@@ -1,5 +1,4 @@
 "use client"
-import Typing from './Typing'
 import { dashboard } from '../../../public/images'
 import Image from 'next/image'
 import Link from 'next/link'

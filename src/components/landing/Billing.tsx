@@ -1,6 +1,5 @@
 "use client";
-
-import { apple, bill, google } from "../../../public/images";
+import { bill } from "../../../public/images";
 import Image from "next/image";
 import { motion } from "framer-motion";
 

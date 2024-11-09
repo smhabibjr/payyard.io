@@ -11,11 +11,11 @@ const Footer: FC = () => {
     const dataFooter: FooterLink[] = [
         {
             title: 'Links',
-            content: ['Home', 'Services', 'About', 'Tools', 'Contact']
+            content: ['Contact', 'Terms and Conditions', 'Privacy Policy', 'imprint', 'Support']
         },
         {
-            title: 'About',
-            content: ['Partners', 'Careers', 'Press', 'Community', 'Contact']
+            title: 'Community',
+            content: ['Facebook', 'Discord', 'Telegram']
         },
         {
             title: 'Our office',
