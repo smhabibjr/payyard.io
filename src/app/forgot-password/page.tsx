@@ -2,14 +2,14 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { logo } from '../../../public/images';
+import { payyard_logo_blue } from '../../../public/images';
 
 const ForgotPasswordPage: React.FC = () => {
   return (
     <div className="flex flex-col w-full sm:w-3/4 md:w-2/3 lg:w-1/2 xl:w-1/3 2xl:w-1/4 mx-auto p-8 md:p-10 2xl:p-12 3xl:p-14 bg-white rounded-2xl shadow-xl">
       <div className="flex items-center gap-3 pb-4 justify-center">
-        <Image src={logo} alt="Logo" width="75" />
-        <h1 className="text-2xl font-bold text-[#3d83e4] my-auto">FinTech</h1>
+        <Image src={payyard_logo_blue} alt="Payyard.io" width="50" />
+        <h1 className="text-2xl font-bold text-[#3d83e4] my-auto">Payyard.io</h1>
       </div>
 
       <div className="text-sm font-light text-[#3e62aa] pb-8 mx-auto">

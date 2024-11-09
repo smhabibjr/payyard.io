@@ -17,6 +17,10 @@ import twitter_logo from "./twitter-logo.png";
 import withdraw_funds from "./withdraw-funds.gif";
 import send_invoice from "./send-invoices.gif";
 import receive_payment from "./receive-payment.gif";
+import payyard_logo from "./payyard_logo.png";
+import payyard_logo_black from "./payyard_logo_black.png";
+import payyard_logo_white from "./payyard_logo_white.png";
+import payyard_logo_blue from "./payyard_logo_blue.png";
 
 export {
   apple,
@@ -37,5 +41,9 @@ export {
   twitter_logo,
   withdraw_funds,
   send_invoice,
-  receive_payment
+  receive_payment,
+  payyard_logo,
+  payyard_logo_black,
+  payyard_logo_white,
+  payyard_logo_blue
 };
