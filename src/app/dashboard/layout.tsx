@@ -3,7 +3,6 @@
 import "./dashboard.scss";
 import PrelineScript from "@/app/PrelineScript"
 import Backtotop from "@/shared/layout-components/backtotop/backtotop"
-import Footer from "@/shared/layout-components/footer/footer"
 import Header from "@/shared/layout-components/header/header"
 import Sidebar from "@/shared/layout-components/sidebar/sidebar"
 import Switcher from "@/shared/layout-components/switcher/switcher"
@@ -43,10 +42,9 @@ const Layout = ({children,}:any) => {
             {children}
           </div>
         </div>
-        <Footer/>
       </div>
-      {/* <Backtotop/>
-      <PrelineScript/> */}
+      <Backtotop/>
+      <PrelineScript/>
     </Fragment>
     </>
   )
