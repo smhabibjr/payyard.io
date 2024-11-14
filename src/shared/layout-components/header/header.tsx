@@ -83,7 +83,7 @@ const Header = ({ local_varaiable, ThemeChanger }:any) => {
     }
   }
 
-  const toggleSidebar = () => { 
+  const toggleSidebar = () => {
     const theme = store.getState();
     let sidemenuType = theme.dataNavLayout;
     if (window.innerWidth >= 992) {
@@ -231,41 +231,6 @@ const Header = ({ local_varaiable, ThemeChanger }:any) => {
    
 
   };
-  //Dark Model
-
-  const ToggleDark = () => {
-
-    ThemeChanger({
-      ...local_varaiable,
-      "class": local_varaiable.class == 'dark' ? 'light' : 'dark',
-      "dataHeaderStyles":local_varaiable.class == 'dark' ? 'light' : 'dark',
-      "dataMenuStyles": local_varaiable.dataNavLayout == 'horizontal' ? local_varaiable.class == 'dark' ? 'light' : 'dark' : "dark"
-
-    });
-    const theme = store.getState();
-
-    if (theme.class != 'dark') {
-
-      ThemeChanger({
-        ...theme,
-        "bodyBg": '',
-        "Light": '',
-        "darkBg": '',
-        "inputBorder": '',
-      });
-      localStorage.setItem("ynexlighttheme", "light");
-      localStorage.removeItem("ynexdarktheme");
-      localStorage.removeItem("ynexMenu");
-      localStorage.removeItem("ynexHeader");
-    }
-    else {
-      localStorage.setItem("ynexdarktheme", "dark");
-      localStorage.removeItem("ynexlighttheme");
-      localStorage.removeItem("ynexMenu");
-      localStorage.removeItem("ynexHeader");
-    }
-
-  };
 
 
   useEffect(() => {
@@ -315,24 +280,11 @@ const Header = ({ local_varaiable, ThemeChanger }:any) => {
               </div>
               <div className="header-element md:px-[0.325rem] !items-center" onClick={() => toggleSidebar()}>
                 <Link aria-label="Hide Sidebar"
-                  className="sidemenu-toggle animated-arrow  hor-toggle horizontal-navtoggle inline-flex items-center" href="#!" scroll={false}><span></span></Link>
+                  className="sidemenu-toggle animated-arrow  hor-toggle horizontal-navtoggle inline-flex items-center" href="#" scroll={false}><span></span></Link>
               </div>
             </div>
 
             <div className="header-content-right">
-
-              <div className="header-element header-theme-mode hidden !items-center sm:block !py-[1rem] md:!px-[0.65rem] px-2" onClick={() => ToggleDark()}>
-                <button aria-label="anchor"
-                  className="hs-dark-mode-active:hidden flex hs-dark-mode group flex-shrink-0 justify-center items-center gap-2  rounded-full font-medium transition-all text-xs dark:hover:bg-black/20 dark:text-[#8c9097] dark:text-white/50 dark:hover:text-white dark:focus:ring-white/10 dark:focus:ring-offset-white/10"
-                   data-hs-theme-click-value="dark">
-                  <i className="bx bx-moon header-link-icon"></i>
-                </button>
-                <button aria-label="anchor"
-                  className="hs-dark-mode-active:flex hidden hs-dark-mode group flex-shrink-0 justify-center items-center gap-2  rounded-full font-medium text-defaulttextcolor  transition-all text-xs  dark:hover:bg-black/20 dark:text-[#8c9097] dark:text-white/50 dark:hover:text-white dark:focus:ring-white/10 dark:focus:ring-offset-white/10"
-                  data-hs-theme-click-value="light">
-                  <i className="bx bx-sun header-link-icon"></i>
-                </button>
-              </div>
 
               <div className="header-element py-[1rem] md:px-[0.65rem] px-2 notifications-dropdown header-notification hs-dropdown ti-dropdown !hidden md:!block [--placement:bottom-right]">
                 <button id="dropdown-notification" type="button"
