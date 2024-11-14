@@ -1,6 +1,4 @@
-.bg-banner-2 {
-  @apply relative top-0 bg-[url('../public/assets/images/media/backgrounds/4.png')] bg-cover bg-center bg-no-repeat z-[0] before:absolute before:w-full before:h-full before:bg-primary/80 before:inset-0 before:-z-[1] ;
-}
+
 .featured-jobs {
   @apply hidden border border-solid border-defaultborder dark:border-defaultborder/10;
 }
@@ -13,10 +11,7 @@
 .feature-style {
   @apply relative hidden overflow-hidden before:absolute before:w-[4rem] before:h-[4rem] before:-end-[1.5rem] before:-bottom-[1.5rem] before:bg-primary/10 before:rounded-full;
 }
-.bg-banner {
-  @apply bg-primary dark:bg-primary text-white relative overflow-hidden z-[1] before:absolute before:h-full before:w-full before:top-0 before:bg-[url('../public/assets/images/media/backgrounds/7.jpg')] before:bg-no-repeat
-  before:bg-bottom before:bg-cover before:opacity-[0.1] before:transition-all before:ease-linear before:duration-[0.3sec] before:-z-[1];
-}
+
 .featured-card-4 svg {
   @apply w-[1.5rem] h-[1.5rem];
 }

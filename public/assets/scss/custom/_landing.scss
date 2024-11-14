@@ -182,18 +182,7 @@
     .accordion.accordion-primary .accordion-button.collapsed:after {
       @apply bg-white dark:bg-bodybg text-primary #{!important};
     }
-    .landing-banner {
-      @apply relative w-full h-[37rem] top-0 bg-[url('../public/assets/images/media/landing/banner.jpg')] bg-cover bg-center bg-no-repeat
-        before:absolute before:w-full before:h-full before:bg-primary before:opacity-70;
-
-      .main-banner-container {
-        @apply py-[4rem] px-[3rem];
-      }
-
-      .landing-banner-heading {
-        @apply leading-[1.25]  text-[3rem] font-[600] text-white;
-      }
-    }
+   
     .main-menu-container .main-menu {
       @apply ps-0;
     }
@@ -211,10 +200,7 @@
       @apply flex justify-center;
     }
 
-    .landing-Features {
-      @apply relative w-full h-full top-0 bg-[url('../public/assets/images/media/landing/2.jpg')] bg-cover bg-center bg-no-repeat z-[9]
-        before:absolute before:w-full before:h-full before:top-0 before:-z-[1] before:bg-primary/95;
-    }
+  
     .landing-testimonials .swiper-pagination-bullet {
       @apply bg-primary #{!important};
 

@@ -2,15 +2,7 @@
 .main-index footer {
   @apply ps-0 #{!important};
 }
-.box.crm-highlight-card {
-  @apply relative overflow-hidden shadow-none after:absolute after:h-full after:w-full after:bg-[url('../public/assets/images/media/media-65.png')] after:bg-cover after:bg-center after:bg-no-repeat after:z-[0] after:opacity-20;
 
-  .box-body {
-    @apply z-10;
-  }
-
-  @apply bg-primary #{!important};
-}
 
 .crm-lead-legend {
   @apply relative before:absolute before:w-[0.375rem] before:h-[0.375rem] before:rounded-md before:top-[0.375rem] before:-start-[0.625rem];
@@ -831,18 +823,7 @@
 #analytics-bouncerate {
   @apply absolute bottom-0;
 }
-.custom-card.upgrade-card {
-  @apply h-[11.625rem] relative overflow-hidden bg-primary bg-no-repeat
-  before:absolute before:bg-[url('../public/assets/images/media/media-85.png')] before:bg-cover before:bg-no-repeat before:start-0 before:top-0 before:end-0 before:bottom-0 before:opacity-[0.15] #{!important};
 
-  .avatar {
-    @apply absolute -top-[0.6875rem] end-[1.5rem];
-  }
-
-  .upgrade-card-content {
-    @apply absolute bottom-4;
-  }
-}
 
 #analytics-users {
   .apexcharts-grid {

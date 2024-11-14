@@ -1,14 +1,5 @@
 /*-----Feather icons-----*/
 
-@font-face {
-	font-family: "feather";
-	src: url("../public/assets/iconfonts/feather/fonts/feather/feather-webfont.eot?t=1501841394106");
-	/* IE9*/
-	src: url("../public/assets/iconfonts/feather/fonts/feather/feather-webfont.eot?t=1501841394106") format("embedded-opentype"),
-	 url("../public/assets/iconfonts/feather/fonts/feather/feather-webfont.ttf") format("truetype"),
-	  url("../public/assets/iconfonts/feather/fonts/feather/feather-webfont.svg") format("svg");
-	/* iOS 4.1- */
-}
 .fe {
 	font-family: 'feather' !important;
 	speak: none;

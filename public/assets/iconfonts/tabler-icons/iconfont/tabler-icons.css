@@ -2,17 +2,7 @@
  * Tabler Icons 1.68.0 by tabler - https://tabler.io
  * License - https://github.com/tabler/tabler-icons/blob/master/LICENSE
  */
-@font-face {
-  font-family: "tabler-icons";
-  font-style: normal;
-  font-weight: 400;
-  src: url("../public/assets/iconfonts/tabler-icons/iconfont/fonts/tabler-icons.eot");
-  src: url("../public/assets/iconfonts/tabler-icons/iconfont/fonts/tabler-icons.eot?#iefix") format("embedded-opentype"),
-    url("../public/assets/iconfonts/tabler-icons/iconfont/fonts/tabler-icons.woff2") format("woff2"),
-    url("../public/assets/iconfonts/tabler-icons/iconfont/fonts/tabler-icons.woff") format("woff"),
-    url("../public/assets/iconfonts/tabler-icons/iconfont/fonts/tabler-icons.ttf") format("truetype"),
-    url("../public/assets/iconfonts/tabler-icons/iconfont/fonts/tabler-icons.svg#tabler-icons") format("svg");
-}
+
 
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
   @font-face {
