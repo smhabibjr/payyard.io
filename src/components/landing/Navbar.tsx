@@ -12,7 +12,7 @@ const Navbar: React.FC = () => {
             </div>
             
             <div className="hidden xl:block">
-                <Link href="/sign-in">
+                <Link href="/dashboard">
                     <button className="bg-btnDark text-white w-44 h-16 font-medium rounded-lg hover:shadow-xl transition duration-200">
                         <span className="hover:text-gray-200 transition-all">Sign Up</span>
                     </button>
