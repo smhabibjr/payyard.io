@@ -8,7 +8,16 @@
 *
 * Date: 2024-01-14
 */
-
+@font-face {
+  font-family: "remixicon";
+  src: url('../public/assets/iconfonts/RemixIcons/fonts/remixicon.eot?t=1705244689813'); /* IE9*/
+  src: url('../public/assets/iconfonts/RemixIcons/fonts/remixicon.eot?t=1705244689813#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url("../public/assets/iconfonts/RemixIcons/fonts/remixicon.woff2?t=1705244689813") format("woff2"),
+  url("../public/assets/iconfonts/RemixIcons/fonts/remixicon.woff?t=1705244689813") format("woff"),
+  url('../public/assets/iconfonts/RemixIcons/fonts/remixicon.ttf?t=1705244689813') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('../public/assets/iconfonts/RemixIcons/fonts/remixicon.svg?t=1705244689813#remixicon') format('svg'); /* iOS 4.1- */
+  font-display: swap;
+}
 
 [class^="ri-"], [class*=" ri-"] {
   font-family: 'remixicon' !important;

@@ -1,5 +1,6 @@
 "use client"
 import '@public/assets/css/style.css';
+/* import "./dashboard.scss"; */
 import PrelineScript from "@/app/PrelineScript"
 import Backtotop from "@/shared/layout-components/backtotop/backtotop"
 import Footer from "@/shared/layout-components/footer/footer"
@@ -37,16 +38,15 @@ const Layout = ({children,}:any) => {
         <Header/>
         <Sidebar/>
         <div className='content'>
-          <div className='main-content'  
-          onClick={Bodyclickk}
+          <div className='main-content'
           >
             {children}
           </div>
         </div>
         <Footer/>
       </div>
-      <Backtotop/>
-      <PrelineScript/>
+      {/* <Backtotop/>
+      <PrelineScript/> */}
     </Fragment>
     </>
   )
