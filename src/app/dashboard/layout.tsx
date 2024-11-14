@@ -1,6 +1,6 @@
 "use client"
-import '@public/assets/css/style.css';
-/* import "./dashboard.scss"; */
+/* import '@public/assets/css/style.css'; */
+import "./dashboard.scss";
 import PrelineScript from "@/app/PrelineScript"
 import Backtotop from "@/shared/layout-components/backtotop/backtotop"
 import Footer from "@/shared/layout-components/footer/footer"

@@ -1,4 +1,4 @@
-@import "../..//assets/css/style.css";
+@import "../../../public/assets/css/style.css";
 
  //Packages css
 @import "@simonwep/pickr/dist/themes/classic.min.css";
@@ -8,18 +8,18 @@
 @import "simplebar-react/dist/simplebar.min.css";
 
 
-// SCSS with Tailwind @apply usage
-/* @media (max-width: 991.98px) {
+  @media (max-width: 991.98px) {
     [data-toggled="open"] {
       #responsive-overlay {
-        @apply visible !important;  // Apply Tailwind classes directly
+        @apply visible #{!important};
         --tw-bg-opacity: 0.5;
+
       }
-    }
+    } 
   }
-  
+
   @media screen and (min-width: 992px) {
     [data-vertical-style=doublemenu] .app-sidebar .slide.has-sub.active > .slide-menu {
-      display: block !important;
+        display: block !important;
     }
-  } */
+}
