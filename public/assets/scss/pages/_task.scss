@@ -60,7 +60,7 @@
         }
     }
     .task-Null {
-        @apply relative min-h-[12.5rem] before:absolute before:inset-0 before:bg-white dark:before:bg-bodybg before:rounded-md before:bg-[url('../public/assets/images/media/media-83.svg')] before:bg-cover before:bg-center before:h-[12.5rem]
+        @apply relative min-h-[12.5rem] before:absolute before:inset-0 before:bg-white dark:before:bg-bodybg before:rounded-md before:bg-[url('/assets/images/media/media-83.svg')] before:bg-cover before:bg-center before:h-[12.5rem]
         before:w-full before:my-0 before:mx-auto;
     }
 }

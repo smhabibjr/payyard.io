@@ -183,7 +183,7 @@
       @apply bg-white dark:bg-bodybg text-primary #{!important};
     }
     .landing-banner {
-      @apply relative w-full h-[37rem] top-0 bg-[url('../public/assets/images/media/landing/banner.jpg')] bg-cover bg-center bg-no-repeat
+      @apply relative w-full h-[37rem] top-0 bg-[url('/assets/images/media/landing/banner.jpg')] bg-cover bg-center bg-no-repeat
         before:absolute before:w-full before:h-full before:bg-primary before:opacity-70;
 
       .main-banner-container {
@@ -212,7 +212,7 @@
     }
 
     .landing-Features {
-      @apply relative w-full h-full top-0 bg-[url('../public/assets/images/media/landing/2.jpg')] bg-cover bg-center bg-no-repeat z-[9]
+      @apply relative w-full h-full top-0 bg-[url('/assets/images/media/landing/2.jpg')] bg-cover bg-center bg-no-repeat z-[9]
         before:absolute before:w-full before:h-full before:top-0 before:-z-[1] before:bg-primary/95;
     }
     .landing-testimonials .swiper-pagination-bullet {

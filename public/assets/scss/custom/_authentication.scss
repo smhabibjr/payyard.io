@@ -50,7 +50,7 @@
   &.coming-soon,
   &.under-maintenance {
     .authentication-cover {
-      @apply bg-[url('../public/assets/images/media/media-19.jpg')];
+      @apply bg-[url('/assets/images/media/media-19.jpg')];
 
       .aunthentication-cover-content {
         @apply w-full h-full p-[3rem] backdrop:filter-none bg-white dark:bg-bodybg;
@@ -80,7 +80,7 @@
   }
 
   .authentication-cover {
-    @apply bg-[url('../public/assets/images/authentication/1.jpg')] bg-cover bg-center bg-no-repeat w-full h-full flex items-center justify-center relative before:absolute before:w-full before:h-full before:inset-0 before:bg-primary/10;
+    @apply bg-[url('/assets/images/authentication/1.jpg')] bg-cover bg-center bg-no-repeat w-full h-full flex items-center justify-center relative before:absolute before:w-full before:h-full before:inset-0 before:bg-primary/10;
 
     .aunthentication-cover-content {
       @apply w-[70%] h-[37.5rem] bg-black/20 p-8 backdrop-blur-[1.875rem] relative #{!important};
