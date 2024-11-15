@@ -27,8 +27,6 @@ const Layout = ({children,}:any) => {
 
   return (
     <>
-
-      
     <Fragment>
         <Switcher/>
       <div className='page'>

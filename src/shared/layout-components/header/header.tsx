@@ -227,9 +227,6 @@ const Header = ({ local_varaiable, ThemeChanger }:any) => {
         ThemeChanger({ ...theme, "dataToggled": "close" });
       }
     }
-    
-   
-
   };
 
 
