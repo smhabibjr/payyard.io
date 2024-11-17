@@ -17,6 +17,10 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      padding: {
+        '0.725rem': '0.725rem',
+        '1rem': '1rem',
+      },
       animation: {
         'border': 'border 4s linear infinite',
         projects: "particles 2s linear infinite",
