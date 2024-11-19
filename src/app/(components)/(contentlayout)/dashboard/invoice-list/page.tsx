@@ -17,7 +17,7 @@ const Invoicelist = () => {
     return (
         <Fragment>
             <Seo title={"Invoice List"} />
-            <Pageheader currentpage="Invoice List" activepage="Invoice" mainpage="Invoice List" />
+            <Pageheader currentpage="Invoice List" activepage="Dashboard" mainpage="Invoice List" />
             <div className="grid grid-cols-12 gap-x-6">
                 <div className="xl:col-span-9 col-span-12">
                     <div className="box">

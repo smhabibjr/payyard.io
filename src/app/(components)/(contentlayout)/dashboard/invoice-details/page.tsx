@@ -13,7 +13,7 @@ const Invoicedetails = () => {
     return (
         <Fragment>
             <Seo title={"Invoice Details"} />
-            <Pageheader currentpage="Invoice Details" activepage="Invoice" mainpage="Invoice Details" />
+            <Pageheader currentpage="Invoice Details" activepage="Dashboard" mainpage="Invoice Details" />
             <div className="grid grid-cols-12 gap-6">
                 <div className="xl:col-span-9 col-span-12">
                     <div className="box">

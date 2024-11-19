@@ -47,7 +47,7 @@ const Createinvoice = () => {
     return (
         <Fragment>
             <Seo title={"Create Invoice"} />
-            <Pageheader currentpage="Create Invoice" activepage="Invoice" mainpage="Create Invoice" />
+            <Pageheader currentpage="Create Invoice" activepage="Dashboard" mainpage="Create Invoice" />
             <div className="grid grid-cols-12 gap-6">
                 <div className="xl:col-span-9 col-span-12">
                     <div className="box">
