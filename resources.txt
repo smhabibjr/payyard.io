@@ -1,0 +1,5 @@
+payyard.io
+
+invoice app using next js : https://www.youtube.com/watch?v=Mcw8Mp8PYUE
+auth using aws amplify: https://www.youtube.com/watch?v=wGg-c63DLak
+a blog about invoice and resend: https://www.freecodecamp.org/news/build-an-invoice-saas-app-with-next-js-and-neon-postgres/?ref=dailydev
