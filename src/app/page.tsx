@@ -1,14 +1,14 @@
 import Head from "next/head";
-import Navbar from "@/components/landing/Navbar";
-import Banner from "@/components/landing/banner";
-import HowWorks from "@/components/landing/HowWorks";
-import Transaction from "@/components/landing/transaction";
-import Newsletter from "@/components/landing/newsletter";
-import Footer from "@/components/landing/footer";
-import Billing from "@/components/landing/Billing";
-import FAQ from "@/components/landing/faq";
-import ShortExplainVideo from "@/components/landing/ShortExplainVideo";
-import JoinCommunity from "@/components/landing/JoinCommunity";
+import Navbar from "@/shared/landing/Navbar";
+import Banner from "@/shared/landing/banner";
+import HowWorks from "@/shared/landing/HowWorks";
+import Transaction from "@/shared/landing/transaction";
+import Newsletter from "@/shared/landing/newsletter";
+import Footer from "@/shared/landing/footer";
+import Billing from "@/shared/landing/Billing";
+import FAQ from "@/shared/landing/faq";
+import ShortExplainVideo from "@/shared/landing/ShortExplainVideo";
+import JoinCommunity from "@/shared/landing/JoinCommunity";
 
 export default function Home() {
   return (
