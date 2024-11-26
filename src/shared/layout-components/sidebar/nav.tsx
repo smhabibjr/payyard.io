@@ -79,7 +79,7 @@ export const MenuItems = [
         selected: false,
       },
       {
-        path: "/settings/withdraw-bank",
+        path: "/settings/linked-bank",
         title: "Linked Bank",
         type: "link",
         icon: WithdrawBankIcon,
