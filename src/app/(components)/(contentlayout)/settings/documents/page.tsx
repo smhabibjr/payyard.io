@@ -8,225 +8,295 @@ import React, { Fragment, useState } from 'react';
 const CountUp = dynamic(() => import("react-countup"), { ssr: false });
 const ReactApexChart = dynamic(() => import("react-apexcharts"), { ssr: false });
 import * as Invoicedata from "@/shared/data/pages/invoice/invoicelistdata";
-const Invoicelist = () => {
-    const [manageInvoiceData, setManageInvoiceData] = useState([...Manageinvoicedata]);
-    const handleDelete = (idToRemove: number) => {
-        const updatedInvoiceData = manageInvoiceData.filter((item) => item.id !== idToRemove);
-        setManageInvoiceData(updatedInvoiceData);
-    };
+import { FaPlus, FaEye, FaTrash, FaIdCard, FaPassport } from 'react-icons/fa'
+
+interface Document {
+    id: string
+    type: string
+    number: string
+    issueDate: string
+    expiryDate: string
+    country: string
+    frontSide: File | null
+    backSide: File | null
+  }
+
+const UserDocument = () => {
+    const [documents, setDocuments] = useState<Document[]>([
+        { id: '1', type: 'National ID', number: 'ID123456', issueDate: '2020-01-01', expiryDate: '2030-01-01', country: 'United States', frontSide: null, backSide: null },
+        { id: '2', type: 'Passport', number: 'P987654', issueDate: '2019-06-15', expiryDate: '2029-06-15', country: 'United Kingdom', frontSide: null, backSide: null },
+      ])
+    
+      const [newDocument, setNewDocument] = useState<Partial<Document>>({
+        type: 'national-id',
+        number: '',
+        issueDate: '',
+        expiryDate: '',
+        country: '',
+        frontSide: null,
+        backSide: null,
+      })
+    
+      const [previewDocument, setPreviewDocument] = useState<Document | null>(null)
+    
+      const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+        const { name, value } = e.target
+        setNewDocument(prev => ({ ...prev, [name]: value }))
+      }
+    
+      const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const { name, files } = e.target
+        if (files && files[0]) {
+          setNewDocument(prev => ({ ...prev, [name]: files[0] }))
+        }
+      }
+    
+      const handleSubmit = (e: React.FormEvent) => {
+        e.preventDefault()
+        const id = Math.random().toString(36).substr(2, 9)
+        setDocuments(prev => [...prev, { ...newDocument, id } as Document])
+        setNewDocument({
+          type: 'national-id',
+          number: '',
+          issueDate: '',
+          expiryDate: '',
+          country: '',
+          frontSide: null,
+          backSide: null,
+        })
+      }
+    
+      const deleteDocument = (id: string) => {
+        setDocuments(prev => prev.filter(doc => doc.id !== id))
+      }
+    
+      const previewDocumentHandler = (doc: Document) => {
+        setPreviewDocument(doc)
+      }
     return (
         <Fragment>
             <Seo title={"Invoice List"} />
             <Pageheader currentpage="Documents" activepage="Settings" mainpage="Documents" />
-            <div className="grid grid-cols-12 gap-x-6">
-                <div className="xl:col-span-9 col-span-12">
-                    <div className="box">
-                        <div className="box-header justify-between">
-                            <div className="box-title">
-                                Manage Invoices
-                            </div>
-                            <div className="flex">
-                                <button type="button" className="ti-btn !py-1 !px-2 !text-[0.75rem] !text-white !font-medium bg-primary"><i className="ri-add-line font-semibold align-middle me-1"></i> Create Invoice</button>
-                                <div className="hs-dropdown ti-dropdown ms-2">
-                                    <button aria-label="button" type="button" className="ti-btn ti-btn-secondary ti-btn-sm" aria-expanded="false">
-                                        <i className="ti ti-dots-vertical"></i>
-                                    </button>
-                                    <ul className="hs-dropdown-menu ti-dropdown-menu hidden">
-                                        <li><Link className="ti-dropdown-item !py-2 !px-[0.9375rem] !text-[0.8125rem] !font-medium block" href="#!" scroll={false}>All Invoices</Link></li>
-                                        <li><Link className="ti-dropdown-item !py-2 !px-[0.9375rem] !text-[0.8125rem] !font-medium block" href="#!" scroll={false}>Paid Invoices</Link></li>
-                                        <li><Link className="ti-dropdown-item !py-2 !px-[0.9375rem] !text-[0.8125rem] !font-medium block" href="#!" scroll={false}>Pending Invoices</Link></li>
-                                        <li><Link className="ti-dropdown-item !py-2 !px-[0.9375rem] !text-[0.8125rem] !font-medium block" href="#!" scroll={false}>Overdue Invoices</Link></li>
-                                    </ul>
+            <div className="min-h-screen">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
+                    <div className="bg-white rounded-lg shadow-md p-4 sm:p-6">
+                    <h2 className="text-xl font-semibold mb-4">Previous Documents</h2>
+                    {documents.length === 0 ? (
+                        <p className="text-gray-500">No documents added yet.</p>
+                    ) : (
+                        <ul className="space-y-4">
+                        {documents.map((doc) => (
+                            <li key={doc.id} className="flex flex-col sm:flex-row sm:items-center justify-between bg-gray-50 p-4 rounded-lg">
+                            <div className="flex items-center mb-2 sm:mb-0">
+                                {doc.type === 'National ID' ? (
+                                <FaIdCard className="text-blue-500 mr-3 text-xl" />
+                                ) : (
+                                <FaPassport className="text-green-500 mr-3 text-xl" />
+                                )}
+                                <div>
+                                <h6 className="font-semibold">{doc.type}</h6>
+                                <p className="text-sm text-gray-600">Number: {doc.number}</p>
+                                <p className="text-sm text-gray-600">Expiry: {doc.expiryDate}</p>
                                 </div>
                             </div>
+                            <div className="flex space-x-2">
+                                <button
+                                onClick={() => previewDocumentHandler(doc)}
+                                className="p-2 text-blue-500 hover:bg-blue-100 rounded-full transition-colors"
+                                aria-label={`View ${doc.type}`}
+                                >
+                                <FaEye className="w-5 h-5" />
+                                </button>
+                                <button
+                                onClick={() => deleteDocument(doc.id)}
+                                className="p-2 text-red-500 hover:bg-red-100 rounded-full transition-colors"
+                                aria-label={`Delete ${doc.type}`}
+                                >
+                                <FaTrash className="w-5 h-5" />
+                                </button>
+                            </div>
+                            </li>
+                        ))}
+                        </ul>
+                    )}
+                    </div>
+
+                    <div className="bg-white rounded-lg shadow-md p-4 sm:p-6">
+                    <h2 className="text-xl font-semibold mb-4">Add New Document</h2>
+                    <form onSubmit={handleSubmit} className="space-y-4">
+                        <div>
+                        <label htmlFor="type" className="block text-sm font-medium text-gray-700 mb-1">Document Type</label>
+                        <select
+                            id="type"
+                            name="type"
+                            value={newDocument.type}
+                            onChange={handleInputChange}
+                            className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500"
+                            required
+                        >
+                            <option value="national-id">National ID Card</option>
+                            <option value="passport">Passport</option>
+                        </select>
                         </div>
-                        <div className="box-body">
-                            <div className="table-responsive">
-                                <table className="table whitespace-nowrap table-bordered min-w-full">
-                                    <thead>
-                                        <tr>
-                                            <th scope="col" className="text-start">Client</th>
-                                            <th scope="col" className="text-start">Invoice ID</th>
-                                            <th scope="col" className="text-start">Issued Date</th>
-                                            <th scope="col" className="text-start">Amount</th>
-                                            <th scope="col" className="text-start">Status</th>
-                                            <th scope="col" className="text-start">Due Date</th>
-                                            <th scope="col" className="text-start">Action</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        {manageInvoiceData.map((idx) => (
-                                            <tr className="invoice-list border border-defaultborder dark:border-defaultborder/10" key={Math.random()}>
-                                                <td>
-                                                    <div className="flex items-center">
-                                                        <div className="me-2 leading-none">
-                                                            <span className="avatar avatar-sm avatar-rounded">
-                                                                <img src={idx.src} alt="" />
-                                                            </span>
-                                                        </div>
-                                                        <div>
-                                                            <p className="mb-0 font-semibold">{idx.name}</p>
-                                                            <p className="mb-0 text-[.6875rem] text-[#8c9097] dark:text-white/50">{idx.mail}</p>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <Link href="#!" scroll={false} className="font-semibold text-primary">
-                                                        {idx.invoiceid}
-                                                    </Link>
-                                                </td>
-                                                <td>
-                                                    {idx.date}
-                                                </td>
-                                                <td>
-                                                    {idx.amount}
-                                                </td>
-                                                <td>
-                                                    <span className={`badge bg-${idx.color}/10 text-${idx.color}`}>{idx.badge}</span>
-                                                </td>
-                                                <td>
-                                                    {idx.due}
-                                                </td>
-                                                <td>
-                                                    <button aria-label="button" type="button" className="ti-btn ti-btn-primary ti-btn-icon ti-btn-sm me-2"><i className="ri-printer-line"></i></button>
-                                                    <button onClick={() => handleDelete(idx.id)} aria-label="button" type="button" className="ti-btn ti-btn-danger ti-btn-icon ms-1 ti-btn-sm invoice-btn" ><i className="ri-delete-bin-5-line"></i></button>
-                                                </td>
-                                            </tr>
-                                        ))}
-                                    </tbody>
-                                </table>
+
+                        <div>
+                        <label htmlFor="number" className="block text-sm font-medium text-gray-700 mb-1">Document Number</label>
+                        <input
+                            type="text"
+                            id="number"
+                            name="number"
+                            value={newDocument.number}
+                            onChange={handleInputChange}
+                            placeholder="Enter Document Number"
+                            className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500"
+                            required
+                        />
+                        </div>
+
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label htmlFor="issueDate" className="block text-sm font-medium text-gray-700 mb-1">Issue Date</label>
+                            <input
+                            type="date"
+                            id="issueDate"
+                            name="issueDate"
+                            value={newDocument.issueDate}
+                            onChange={handleInputChange}
+                            className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500"
+                            required
+                            />
+                        </div>
+                        <div>
+                            <label htmlFor="expiryDate" className="block text-sm font-medium text-gray-700 mb-1">Expiry Date</label>
+                            <input
+                            type="date"
+                            id="expiryDate"
+                            name="expiryDate"
+                            value={newDocument.expiryDate}
+                            onChange={handleInputChange}
+                            className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500"
+                            required
+                            />
+                        </div>
+                        </div>
+
+                        <div>
+                        <label htmlFor="country" className="block text-sm font-medium text-gray-700 mb-1">Issuer Country</label>
+                        <select
+                            id="country"
+                            name="country"
+                            value={newDocument.country}
+                            onChange={handleInputChange}
+                            className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500"
+                            required
+                        >
+                            <option value="">Select country</option>
+                            <option value="us">United States</option>
+                            <option value="uk">United Kingdom</option>
+                            <option value="ca">Canada</option>
+                        </select>
+                        </div>
+
+                        <div>
+                        <label htmlFor="frontSide" className="block text-sm font-medium text-gray-700 mb-1">Front Side</label>
+                        <div className="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md">
+                            <div className="space-y-1 text-center">
+                            <FaPlus className="mx-auto h-12 w-12 text-gray-400" />
+                            <div className="flex text-sm text-gray-600">
+                                <label htmlFor="frontSide" className="relative cursor-pointer bg-white rounded-md font-medium text-blue-600 hover:text-blue-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-blue-500">
+                                <span>Upload front side</span>
+                                <input id="frontSide" name="frontSide" type="file" className="sr-only" onChange={handleFileChange} accept="image/jpeg,image/png" required />
+                                </label>
+                                <p className="pl-1">or drag and drop</p>
+                            </div>
+                            <p className="text-xs text-gray-500">PNG, JPG up to 2MB</p>
                             </div>
                         </div>
-                        <div className="box-footer">
-                            <nav aria-label="Page navigation">
-                                <ul className="ti-pagination ltr:float-right rtl:float-left mb-0">
-                                    <li className="page-item disabled"><Link className="page-link px-3 py-[0.375rem]" href="#!" scroll={false}>Previous</Link></li>
-                                    <li className="page-item"><Link className="page-link active px-3 py-[0.375rem]" href="#!" scroll={false}>1</Link></li>
-                                    <li className="page-item"><Link className="page-link px-3 py-[0.375rem]" href="#!" scroll={false}>2</Link></li>
-                                    <li className="page-item hidden sm:block"><Link className="page-link px-3 py-[0.375rem]" href="#!" scroll={false}>3</Link></li>
-                                    <li className="page-item"><Link className="page-link px-3 py-[0.375rem]" href="#!" scroll={false}>Next</Link></li>
-                                </ul>
-                            </nav>
                         </div>
+
+                        <div>
+                        <label htmlFor="backSide" className="block text-sm font-medium text-gray-700 mb-1">Back Side</label>
+                        <div className="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md">
+                            <div className="space-y-1 text-center">
+                            <FaPlus className="mx-auto h-12 w-12 text-gray-400" />
+                            <div className="flex text-sm text-gray-600">
+                                <label htmlFor="backSide" className="relative cursor-pointer bg-white rounded-md font-medium text-blue-600 hover:text-blue-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-blue-500">
+                                <span>Upload back side</span>
+                                <input id="backSide" name="backSide" type="file" className="sr-only" onChange={handleFileChange} accept="image/jpeg,image/png" required />
+                                </label>
+                                <p className="pl-1">or drag and drop</p>
+                            </div>
+                            <p className="text-xs text-gray-500">PNG, JPG up to 2MB</p>
+                            </div>
+                        </div>
+                        </div>
+
+                        <button type="button" className="w-full ti-btn !py-2 !px-4 !text-[0.75rem] !text-white !font-medium bg-primary">Add Document</button>
+                    </form>
                     </div>
                 </div>
-                <div className="xl:col-span-3 col-span-12">
-                    <div className="box">
-                        <div className="box-body !p-0">
-                            <div className="p-6 border-b border-dashed dark:border-defaultborder/10 flex items-start">
-                                <div className="svg-icon-background bg-primary/10 me-6">
-                                    <svg xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" viewBox="0 0 24 24" className="svg-primary"><path d="M13,16H7a1,1,0,0,0,0,2h6a1,1,0,0,0,0-2ZM9,10h2a1,1,0,0,0,0-2H9a1,1,0,0,0,0,2Zm12,2H18V3a1,1,0,0,0-.5-.87,1,1,0,0,0-1,0l-3,1.72-3-1.72a1,1,0,0,0-1,0l-3,1.72-3-1.72a1,1,0,0,0-1,0A1,1,0,0,0,2,3V19a3,3,0,0,0,3,3H19a3,3,0,0,0,3-3V13A1,1,0,0,0,21,12ZM5,20a1,1,0,0,1-1-1V4.73L6,5.87a1.08,1.08,0,0,0,1,0l3-1.72,3,1.72a1.08,1.08,0,0,0,1,0l2-1.14V19a3,3,0,0,0,.18,1Zm15-1a1,1,0,0,1-2,0V14h2Zm-7-7H7a1,1,0,0,0,0,2h6a1,1,0,0,0,0-2Z" /></svg>
-                                </div>
-                                <div className="flex-grow">
-                                    <h6 className="mb-1 !text-[0.75rem] !font-medium">Total Invoices Amount
-                                        <span className="badge bg-primary text-white font-semibold ltr:float-right rtl:float-left">
-                                            12,345
-                                        </span>
-                                    </h6>
-                                    <div className="pb-0 mt-0">
-                                        <div>
-                                            <h4 className="text-[1.125rem] font-semibold mb-2">$<span className="count-up" data-count="192"><CountUp
-                                                end={192}
-                                                start={0}
-                                                duration={4.94}
-                                            /></span>.87k</h4>
-                                            <p className="text-[#8c9097] dark:text-white/50 text-[.6875rem] mb-0 leading-none">
-                                                <span className="text-success me-1 font-semibold inline-flex">
-                                                    <i className="ri-arrow-up-s-line me-1 align-middle"></i>3.25%
-                                                </span>
-                                                <span>this month</span>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="p-6 border-b border-dashed dark:border-defaultborder/10 flex items-start">
-                                <div className="svg-icon-background bg-success/10 !fill-success me-6">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="svg-success"><path d="M11.5,20h-6a1,1,0,0,1-1-1V5a1,1,0,0,1,1-1h5V7a3,3,0,0,0,3,3h3v5a1,1,0,0,0,2,0V9s0,0,0-.06a1.31,1.31,0,0,0-.06-.27l0-.09a1.07,1.07,0,0,0-.19-.28h0l-6-6h0a1.07,1.07,0,0,0-.28-.19.29.29,0,0,0-.1,0A1.1,1.1,0,0,0,11.56,2H5.5a3,3,0,0,0-3,3V19a3,3,0,0,0,3,3h6a1,1,0,0,0,0-2Zm1-14.59L15.09,8H13.5a1,1,0,0,1-1-1ZM7.5,14h6a1,1,0,0,0,0-2h-6a1,1,0,0,0,0,2Zm4,2h-4a1,1,0,0,0,0,2h4a1,1,0,0,0,0-2Zm-4-6h1a1,1,0,0,0,0-2h-1a1,1,0,0,0,0,2Zm13.71,6.29a1,1,0,0,0-1.42,0l-3.29,3.3-1.29-1.3a1,1,0,0,0-1.42,1.42l2,2a1,1,0,0,0,1.42,0l4-4A1,1,0,0,0,21.21,16.29Z" /></svg>
-                                </div>
-                                <div className="flex-grow">
-                                    <h6 className="mb-1 !text-[0.75rem] !font-medium">Total Paid Invoices
-                                        <span className="badge bg-success text-white font-semibold ltr:float-right rtl:float-left">
-                                            4,176
-                                        </span>
-                                    </h6>
-                                    <div>
-                                        <h4 className="text-[1.125rem] font-semibold mb-2">$<span className="count-up" data-count="68.83"><CountUp
-                                            end={68.83}
-                                            start={0}
-                                            duration={4.94}
-                                        /></span>K</h4>
-                                        <p className="text-[#8c9097] dark:text-white/50 text-[.6875rem] mb-0 leading-none">
-                                            <span className="text-danger me-1 font-semibold inline-flex">
-                                                <i className="ri-arrow-down-s-line me-1 align-middle"></i>1.16%
-                                            </span>
-                                            <span>this month</span>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="flex items-start p-6 border-b dark:border-defaultborder/10 border-dashed">
-                                <div className="svg-icon-background bg-warning/10 !fill-warning me-6">
-                                    <svg xmlns="http://www.w3.org/2000/svg" enableBackground="new 0 0 24 24" viewBox="0 0 24 24" className="svg-warning"><path d="M19,12h-7V5c0-0.6-0.4-1-1-1c-5,0-9,4-9,9s4,9,9,9s9-4,9-9C20,12.4,19.6,12,19,12z M12,19.9c-3.8,0.6-7.4-2.1-7.9-5.9C3.5,10.2,6.2,6.6,10,6.1V13c0,0.6,0.4,1,1,1h6.9C17.5,17.1,15.1,19.5,12,19.9z M15,2c-0.6,0-1,0.4-1,1v6c0,0.6,0.4,1,1,1h6c0.6,0,1-0.4,1-1C22,5.1,18.9,2,15,2z M16,8V4.1C18,4.5,19.5,6,19.9,8H16z" /></svg>
-                                </div>
-                                <div className="flex-grow">
-                                    <h6 className="mb-1 !text-[0.75rem] !font-medium">Pending Invoices
-                                        <span className="badge bg-warning text-white font-semibold ltr:float-right rtl:float-left">
-                                            7,064
-                                        </span>
-                                    </h6>
-                                    <div>
-                                        <h4 className="text-[1.125rem] font-semibold mb-2">$<span className="count-up" data-count="81.57"><CountUp
-                                            end={81.57}
-                                            start={0}
-                                            duration={4.94}
-                                        /></span>K</h4>
-                                        <p className="text-[#8c9097] dark:text-white/50 text-[.6875rem] mb-0 leading-none">
-                                            <span className="text-success me-1 font-semibold inline-flex">
-                                                <i className="ri-arrow-up-s-line me-1 align-middle"></i>0.25%
-                                            </span>
-                                            <span>this month</span>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="flex items-start p-6 border-b dark:border-defaultborder/10 border-dashed">
-                                <div className="svg-icon-background !bg-light me-6">
-                                    <svg xmlns="http://www.w3.org/2000/svg" enableBackground="new 0 0 24 24" viewBox="0 0 24 24" className="svg-dark dark:fill-white"><path d="M19,12h-7V5c0-0.6-0.4-1-1-1c-5,0-9,4-9,9s4,9,9,9s9-4,9-9C20,12.4,19.6,12,19,12z M12,19.9c-3.8,0.6-7.4-2.1-7.9-5.9C3.5,10.2,6.2,6.6,10,6.1V13c0,0.6,0.4,1,1,1h6.9C17.5,17.1,15.1,19.5,12,19.9z M15,2c-0.6,0-1,0.4-1,1v6c0,0.6,0.4,1,1,1h6c0.6,0,1-0.4,1-1C22,5.1,18.9,2,15,2z M16,8V4.1C18,4.5,19.5,6,19.9,8H16z" /></svg>
-                                </div>
-                                <div className="flex-grow">
-                                    <h6 className="mb-1 !text-[0.75rem] !font-medium">Overdue Invoices
-                                        <span className="badge bg-light text-default font-semibold ltr:float-right rtl:float-left">
-                                            1,105
-                                        </span>
-                                    </h6>
-                                    <div>
-                                        <h4 className="text-[1.125rem] font-semibold mb-2">$<span className="count-up" data-count="32.47"><CountUp
-                                            end={32.47}
-                                            start={0}
-                                            duration={4.94}
-                                        /></span>K</h4>
-                                        <p className="text-[#8c9097] dark:text-white/50 text-[.6875rem] mb-0 leading-none">
-                                            <span className="text-success me-1 font-semibFold inline-flex">
-                                                <i className="ri-arrow-down-s-line me-1 align-middle"></i>0.46%
-                                            </span>
-                                            <span>this month</span>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="p-6">
-                                <p className="text-[.9375rem] font-semibold">Invoice Stats <span className="text-[#8c9097] dark:text-white/50 font-normal">(Last 6 months) :</span></p>
-                                <div id="invoice-list-stats">
-                                    <ReactApexChart  options={Invoicedata.InvoiceStats.options} series={Invoicedata.InvoiceStats.series} type="bar" width={"100%"} height={210} />
-                                </div>
-                            </div>
+
+            {previewDocument && (
+                <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
+                <div className="bg-white rounded-lg shadow-xl p-4 sm:p-6 w-full max-w-3xl max-h-[90vh] overflow-y-auto">
+                    <h2 className="text-2xl font-bold mb-4">Document Preview</h2>
+                    <div className="space-y-4">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                        <p><strong>Type:</strong> {previewDocument.type}</p>
+                        <p><strong>Number:</strong> {previewDocument.number}</p>
+                        <p><strong>Issue Date:</strong> {previewDocument.issueDate}</p>
+                        </div>
+                        <div>
+                        <p><strong>Expiry Date:</strong> {previewDocument.expiryDate}</p>
+                        <p><strong>Country:</strong> {previewDocument.country}</p>
                         </div>
                     </div>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                        <h6 className="font-semibold mb-2">Front Side</h6>
+                        {previewDocument.frontSide ? (
+                            <img
+                            src={URL.createObjectURL(previewDocument.frontSide)}
+                            alt="Front side of document"
+                            className="w-full h-auto object-cover rounded-md"
+                            />
+                        ) : (
+                            <div className="bg-gray-200 w-full h-48 flex items-center justify-center rounded-md">
+                            <p className="text-gray-500">No image uploaded</p>
+                            </div>
+                        )}
+                        </div>
+                        <div>
+                        <h6 className="font-semibold mb-2">Back Side</h6>
+                        {previewDocument.backSide ? (
+                            <img
+                            src={URL.createObjectURL(previewDocument.backSide)}
+                            alt="Back side of document"
+                            className="w-full h-auto object-cover rounded-md"
+                            />
+                        ) : (
+                            <div className="bg-gray-200 w-full h-48 flex items-center justify-center rounded-md">
+                            <p className="text-gray-500">No image uploaded</p>
+                            </div>
+                        )}
+                        </div>
+                    </div>
+                    </div>
+                    <div className="mt-6 flex justify-end">
+                    <button
+                        onClick={() => setPreviewDocument(null)}
+                        className="bg-gray-300 text-gray-800 py-2 px-4 rounded-md hover:bg-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 transition-colors"
+                    >
+                        Close
+                    </button>
+                    </div>
                 </div>
+                </div>
+            )}
             </div>
         </Fragment>
     )
 }
 
-export default Invoicelist
+export default UserDocument

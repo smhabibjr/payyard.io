@@ -92,7 +92,7 @@ export const MenuItems = [
     icon: SupportIcon,
     title: "Support",
     type: "link",
-    path: "/support",
+    path: "/supports",
     active: false,
     selected: false,
   },
