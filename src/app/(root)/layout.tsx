@@ -2,7 +2,6 @@
 import "./dashboard.scss";
 import React, { useContext, useEffect, useMemo, useState } from 'react'
 import { connect } from 'react-redux';
-import  * as switcherdata from '../../shared/data/switcherdata/switcherdata';
 import { ThemeChanger } from '@/shared/redux/action';
 import { Initialload } from '@/shared/contextapi';
 

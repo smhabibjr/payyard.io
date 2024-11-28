@@ -15,19 +15,19 @@ function HowWorks() {
   const data: StepItem[] = [
     {
       id: 2,
-      icon: <Image src={send_invoice} alt="Send Invoice Icon" width={150} height={100} className="rounded-lg" />,
+      icon: <Image src={send_invoice} alt="Send Invoice Icon" width={150} height={100} className="rounded-lg" unoptimized />,
       title: "Generate and Send Invoices",
       description: "Easily create customized invoices and send them directly to your foreign clients.",
     },
     {
       id: 3,
-      icon: <Image src={receive_payment} alt="Receive Payment Icon" width={100} height={100} className="rounded-lg" />,
+      icon: <Image src={receive_payment} alt="Receive Payment Icon" width={100} height={100} className="rounded-lg" unoptimized />,
       title: "Receive Payments",
       description: "Payments made by clients are credited to your Payyard.io account for secure processing.",
     },
     {
       id: 3,
-      icon: <Image src={withdraw_funds} alt="Receive Payment Icon" width={100} height={100} className="rounded-lg" />,
+      icon: <Image src={withdraw_funds} alt="Receive Payment Icon" width={100} height={100} className="rounded-lg" unoptimized />,
       title: "Withdraw Funds",
       description: "Request to withdraw your funds to your bank in Bangladesh, hassle-free.",
     }
