@@ -60,9 +60,9 @@ const LoginPage: React.FC = () => {
           </div>
         </div>
 
-        <button type="submit" className="w-full text-white bg-[#3e34fe] font-medium rounded-lg text-sm px-5 py-2.5 text-center mb-2">
+        <Link href="/dashboard/overview" className="w-full text-white bg-[#3e34fe] font-medium rounded-lg text-sm px-5 py-2.5 text-center mb-2">
           Login
-        </button>
+        </Link>
 
         <div className="text-right text-sm mb-6">
           <Link href="/forgot-password" className="text-[#3e34fe] hover:underline">

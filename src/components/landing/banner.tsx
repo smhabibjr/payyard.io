@@ -60,7 +60,7 @@ function Banner() {
                     whileInView={{ y: 0, opacity: 1 }}
                     transition={{ duration: 1, ease: "easeOut" }}
                 >
-                    <Link href="/dashboard">
+                    <Link href="/sign-in">
                         <button className="bg-btnDark text-white w-44 h-16 font-medium rounded-lg hover:shadow-xl transition duration-200">
                             <span className="hover:text-gray-200 transition-all">Sign Up</span>
                         </button>
