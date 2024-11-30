@@ -8,6 +8,8 @@ import React, { Fragment, useState } from 'react';
 const CountUp = dynamic(() => import("react-countup"), { ssr: false });
 const ReactApexChart = dynamic(() => import("react-apexcharts"), { ssr: false });
 import * as Invoicedata from "@/shared/data/pages/invoice/invoicelistdata";
+import Image from 'next/image';
+
 const Invoicelist = () => {
     const [manageInvoiceData, setManageInvoiceData] = useState([...Manageinvoicedata]);
     const handleDelete = (idToRemove: number) => {
@@ -61,7 +63,7 @@ const Invoicelist = () => {
                                                     <div className="flex items-center">
                                                         <div className="me-2 leading-none">
                                                             <span className="avatar avatar-sm avatar-rounded">
-                                                                <img src={idx.src} alt="" />
+                                                                <Image src={idx.src} alt="" width={28} height={28}  />
                                                             </span>
                                                         </div>
                                                         <div>

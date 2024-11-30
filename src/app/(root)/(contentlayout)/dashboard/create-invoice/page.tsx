@@ -1,48 +1,57 @@
-"use client"
-import Pageheader from '@/shared/layout-components/page-header/pageheader'
-import Seo from '@/shared/layout-components/seo/seo'
+"use client";
+import Pageheader from '@/shared/layout-components/page-header/pageheader';
+import Seo from '@/shared/layout-components/seo/seo';
 import dynamic from 'next/dynamic';
 import Link from 'next/link';
 import React, { Fragment, useState } from 'react';
 import DatePicker from 'react-datepicker';
+import Image from 'next/image';
 const Select = dynamic(() => import("react-select"), { ssr: false });
 
 const Createinvoice = () => {
+  const [startDate, setStartDate] = useState<Date>(new Date());
+  const [startDate1, setStartDate1] = useState<Date>(new Date());
 
-    const [startDate, setStartDate] = useState(new Date());
-    const [startDate1, setStartDate1] = useState(new Date());
-    const handleDateChange = (date:any) => {
-        // Ensure date is defined before setting it
-        if (date) {
-            setStartDate(date);
-        }
-    };
-    const handleDateChange1 = (date:any) => {
-        // Ensure date is defined before setting it
-        if (date) {
-            setStartDate1(date);
-        }
-    };
-    function dec(el:any) {
-        const unit = el.currentTarget.parentElement.querySelector("input").value;
-
-        if (Number(unit) === 0) {
-            return false;
-        } else {
-            el.currentTarget.parentElement.querySelector("input").value--;
-        }
+  // `date` can be null, so we handle it with `Date | null`
+  const handleDateChange = (date: Date | null) => {
+    if (date) {
+      setStartDate(date);
     }
-    function inc(el:any) {
-        el.currentTarget.parentElement.querySelector("input").value++;
-    }
+  };
 
-    const Currencyoptions = [
-        { value: 'Select Currency', label: 'Select Currency' },
-        { value: 'USD - (United States Dollar)', label: 'USD - (United States Dollar)' },
-        { value: 'BHD - (Bahraini Dinar)', label: 'BHD - (Bahraini Dinar)' },
-        { value: 'KWD - (Kuwaiti Dinar)', label: 'KWD - (Kuwaiti Dinar)' },
-        { value: 'CHF - (Swiss Franc)', label: 'CHF - (Swiss Franc)' },
-    ];
+  const handleDateChange1 = (date: Date | null) => {
+    if (date) {
+      setStartDate1(date);
+    }
+  };
+
+  // React.MouseEvent is used for `el` to ensure correct event typing
+  function dec(el: React.MouseEvent<HTMLButtonElement>) {
+    const inputElement = el.currentTarget.parentElement?.querySelector<HTMLInputElement>("input");
+    if (inputElement) {
+      const unit = Number(inputElement.value);
+      if (unit > 0) {
+        inputElement.value = String(unit - 1);
+      }
+    }
+  }
+
+  function inc(el: React.MouseEvent<HTMLButtonElement>) {
+    const inputElement = el.currentTarget.parentElement?.querySelector<HTMLInputElement>("input");
+    if (inputElement) {
+      const unit = Number(inputElement.value);
+      inputElement.value = String(unit + 1);
+    }
+  }
+
+  // Currency options defined with a clear interface
+  const Currencyoptions: { value: string; label: string }[] = [
+    { value: 'Select Currency', label: 'Select Currency' },
+    { value: 'USD - (United States Dollar)', label: 'USD - (United States Dollar)' },
+    { value: 'BHD - (Bahraini Dinar)', label: 'BHD - (Bahraini Dinar)' },
+    { value: 'KWD - (Kuwaiti Dinar)', label: 'KWD - (Kuwaiti Dinar)' },
+    { value: 'CHF - (Swiss Franc)', label: 'CHF - (Swiss Franc)' },
+  ];
 
     return (
         <Fragment>
@@ -54,7 +63,7 @@ const Createinvoice = () => {
                         <div className="box-header xxl:!flex !block">
                             <div className="h5 mb-0 sm:flex block items-center">
                                 <div>
-                                    <img src="../../../assets/images/brand-logos/toggle-logo.png" alt="" />
+                                    <Image src="/assets/images/brand-logos/toggle-logo.png" alt="" width={36} height={36}  />
                                 </div>
                                 <div className="sm:ms-2 ms-0 sm:mt-0 mt-2">
                                     <input type="text" className="form-control !text-[.8rem] !py-1 !px-[0.8rem] !bg-light !rounded-md" placeholder="Invoice Title" defaultValue="INV TITLE" />
