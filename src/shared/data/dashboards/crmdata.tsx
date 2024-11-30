@@ -698,9 +698,9 @@ export const Sourcedata: spark3= {
 // Deals Statistics
 
 export const Dealsstatistics = [
-    { id: '1', src:"../../assets/images/faces/4.jpg", name: 'Mayor Kelly', role: 'Manufacture', mail: 'mayorkelly@gmail.com', location: 'Germany', date: 'Sep 15 - Oct 12, 2023', color: 'info', checked: '' },
-    { id: '2', src:"../../assets/images/faces/15.jpg", name: 'Andrew Garfield', role: 'Development', mail: 'andrewgarfield@gmail.com', location: 'Canada', date: 'Apr 10 - Dec 12, 2023', color: 'primary', checked: 'defaultChecked' },
-    { id: '3', src:"../../assets/images/faces/11.jpg", name: 'Simon Cowel', role: 'Service', mail: 'simoncowel234@gmail.com', location: 'Europe', date: 'Sep 15 - Oct 12, 2023', color: 'danger', checked: '' },
-    { id: '4', src:"../../assets/images/faces/8.jpg", name: 'Mirinda Hers', role: 'Marketing', mail: 'mirindahers@gmail.com', location: 'USA', date: 'Apr 14 - Dec 14, 2023', color: 'warning', checked: 'defaultChecked' },
-    { id: '5', src:"../../assets/images/faces/9.jpg", name: 'Jacob Smith', role: 'Social Plataform', mail: 'jacobsmith@gmail.com', location: 'Singapore', date: 'Feb 25 - Nov 25, 2023', color: 'success', checked: 'defaultChecked' },
+    { id: '1', src:"/assets/images/faces/4.jpg", name: 'Mayor Kelly', role: 'Manufacture', mail: 'mayorkelly@gmail.com', location: 'Germany', date: 'Sep 15 - Oct 12, 2023', color: 'info', checked: '' },
+    { id: '2', src:"/assets/images/faces/15.jpg", name: 'Andrew Garfield', role: 'Development', mail: 'andrewgarfield@gmail.com', location: 'Canada', date: 'Apr 10 - Dec 12, 2023', color: 'primary', checked: 'defaultChecked' },
+    { id: '3', src:"/assets/images/faces/11.jpg", name: 'Simon Cowel', role: 'Service', mail: 'simoncowel234@gmail.com', location: 'Europe', date: 'Sep 15 - Oct 12, 2023', color: 'danger', checked: '' },
+    { id: '4', src:"/assets/images/faces/8.jpg", name: 'Mirinda Hers', role: 'Marketing', mail: 'mirindahers@gmail.com', location: 'USA', date: 'Apr 14 - Dec 14, 2023', color: 'warning', checked: 'defaultChecked' },
+    { id: '5', src:"/assets/images/faces/9.jpg", name: 'Jacob Smith', role: 'Social Plataform', mail: 'jacobsmith@gmail.com', location: 'Singapore', date: 'Feb 25 - Nov 25, 2023', color: 'success', checked: 'defaultChecked' },
 ];

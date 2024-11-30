@@ -6,6 +6,7 @@ import Link from 'next/link';
 import React, { Fragment } from 'react'
 import * as Crmdata from "@/shared/data/dashboards/crmdata";
 import dynamic from "next/dynamic";
+import Image from 'next/image';
 const ReactApexChart = dynamic(() => import("react-apexcharts"), { ssr: false });
 
 const Crm = () => {
@@ -84,7 +85,7 @@ const Crm = () => {
                         <div className="flex items-start flex-wrap">
                           <div className="me-2">
                             <span className=" inline-flex items-center justify-center">
-                              <img src="../../assets/images/faces/10.jpg" alt=""
+                              <Image src="/assets/images/faces/10.jpg" alt="" width={28} height={28}
                                 className="w-[1.75rem] h-[1.75rem] leading-[1.75rem] text-[0.65rem]  rounded-full" />
                             </span>
                           </div>
@@ -115,7 +116,7 @@ const Crm = () => {
                         <div className="flex items-top flex-wrap">
                           <div className="me-2">
                             <span className="inline-flex items-center justify-center">
-                              <img src="../../assets/images/faces/12.jpg" alt=""
+                              <Image src="/assets/images/faces/12.jpg" alt="" width={28} height={28}
                                 className="!w-[1.75rem] !h-[1.75rem] leading-[1.75rem] text-[0.65rem]  rounded-full" />
                             </span>
                           </div>
@@ -412,7 +413,7 @@ const Crm = () => {
                             <td>
                               <div className="flex items-center font-semibold">
                                 <span className="!me-2 inline-flex justify-center items-center">
-                                  <img src={idx.src} alt="img"
+                                  <Image src={idx.src} alt="" width={28} height={28}
                                     className="w-[1.75rem] h-[1.75rem] leading-[1.75rem] text-[0.65rem]  rounded-full" />
                                 </span>{idx.name}
                               </div>

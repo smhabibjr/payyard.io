@@ -1,4 +1,5 @@
-"use client"
+"use client";
 import { createContext } from "react";
 
-export const Initialload = createContext<any>(null);
+// Use a generic type with a default of null
+export const Initialload = createContext<null | unknown>(null);
