@@ -5,16 +5,10 @@ const plugin = require("tailwindcss/plugin");
 const config: Config = {
   darkMode: "class",
   content: [
-    './src/**/*.{js,ts,jsx,tsx}',
+    './src/**/*.{js,ts,jsx,tsx,mdx}', // Covers all files in the src folder
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
-    "./app/**/*.{js,ts,jsx,tsx,mdx}",
-    "./app/**/**/*.{js,ts,jsx,tsx,mdx}",
-    "./app/**/**/*.{js,ts,jsx,tsx,mdx}",
-    "./shared/**/*.{js,ts,jsx,tsx,mdx}",
-    './app/components/**/*.{js,ts,jsx,tsx,mdx}',
-    './node_modules/preline/preline.js',
+    './node_modules/preline/preline.js', // Include external library if needed
   ],
   theme: {
     extend: {
