@@ -259,7 +259,7 @@ const Header = ({ local_varaiable, ThemeChanger }:any) => {
     <Fragment>
       <div className="app-header">
         <nav className="main-header  !h-[3.75rem]" aria-label="Global">
-          <div className="main-header-container px-4">
+          <div className="main-header-container ps-[0.725rem] pe-[1rem]">
 
             <div className="header-content-left">
               <div className="header-element">
