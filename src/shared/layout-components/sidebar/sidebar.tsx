@@ -443,7 +443,7 @@ const Sidebar = ({ local_varaiable, ThemeChanger }: any) => {
 
 		// Start observing the target element
 		observer.observe(targetElement, config);
-		let currentPath = pathname.endsWith("/") ? pathname.slice(0, -1) : pathname;
+		const currentPath = pathname.endsWith("/") ? pathname.slice(0, -1) : pathname;
 		if (currentPath !== previousUrl) {
 			setMenuUsingUrl(currentPath);
 			setPreviousUrl(currentPath);
@@ -452,7 +452,7 @@ const Sidebar = ({ local_varaiable, ThemeChanger }: any) => {
 
 	function toggleSidemenu(event: any, targetObject: any, MenuItems = menuitems) {
 		const theme = store.getState();
-		let element = event.target;
+		const element = event.target;
 		if ((theme.dataNavStyle != "icon-hover" && theme.dataNavStyle != "menu-hover") || (window.innerWidth < 992) || (theme.dataNavLayout != "horizontal") && (theme.dataToggled != "icon-hover-closed" && theme.dataToggled != "menu-hover-closed")) {
 			// {
 			for (const item of MenuItems) {
@@ -499,7 +499,7 @@ const Sidebar = ({ local_varaiable, ThemeChanger }: any) => {
 					}
 					if (siblingUL) {
 						// You've found the sibling <ul> element
-						let siblingULRect = listItem.getBoundingClientRect();
+						const siblingULRect = listItem.getBoundingClientRect();
 						if (theme.dir == 'rtl') {
 							if ((siblingULRect.left - siblingULRect.width - outterUlWidth + 150 < 0 && outterUlWidth < window.innerWidth) && (outterUlWidth + siblingULRect.width + siblingULRect.width < window.innerWidth)) {
 								targetObject.dirchange = true;
@@ -573,7 +573,7 @@ const Sidebar = ({ local_varaiable, ThemeChanger }: any) => {
 
 	function HoverToggleInnerMenuFn(event: any, item: any) {
 		const theme = store.getState();
-		let element = event.target;
+		const element = event.target;
 		if (element && theme.dataNavLayout == "horizontal" && (theme.dataNavStyle == "menu-hover" || theme.dataNavStyle == "icon-hover")) {
 			const listItem = element.closest("li");
 			if (listItem) {
@@ -589,7 +589,7 @@ const Sidebar = ({ local_varaiable, ThemeChanger }: any) => {
 				}
 				if (siblingUL) {
 					// You've found the sibling <ul> element
-					let siblingULRect = listItem.getBoundingClientRect();
+					const siblingULRect = listItem.getBoundingClientRect();
 					if (theme.dir == "rtl") {
 						if ((siblingULRect.left - siblingULRect.width - outterUlWidth + 150 < 0 && outterUlWidth < window.innerWidth) && (outterUlWidth + siblingULRect.width + siblingULRect.width < window.innerWidth)) {
 							item.dirchange = true;
