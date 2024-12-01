@@ -1,4 +1,3 @@
-import { ThemeChanger } from "@/shared/redux/action";
 import Link from "next/link";
 import { Fragment } from "react";
 import { connect } from "react-redux";
@@ -72,4 +71,4 @@ const mapStateToProps = (state: any) => ({
 	local_varaiable: state
 });
 
-export default connect(mapStateToProps, { ThemeChanger })(Menuloop);
+export default connect(mapStateToProps)(Menuloop);
