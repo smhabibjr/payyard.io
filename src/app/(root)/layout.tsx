@@ -2,10 +2,9 @@
 import "./dashboard.scss";
 import React, { useContext } from 'react'
 import { connect } from 'react-redux';
-import { ThemeChanger } from '@/shared/redux/action';
 import { Initialload } from '@/shared/contextapi';
 
-function Layout({children, local_varaiable, ThemeChanger}:any) {
+function Layout({children, local_varaiable}:any) {
   const customstyles :any= {
     ...(local_varaiable.colorPrimaryRgb !== '' && { '--primary-rgb': local_varaiable.colorPrimaryRgb }),
     ...(local_varaiable.colorPrimary !== '' && { '--primary': local_varaiable.colorPrimary }),
@@ -15,7 +14,7 @@ function Layout({children, local_varaiable, ThemeChanger}:any) {
     ...(local_varaiable.Light !== '' && { '--light': local_varaiable.Light }),
   };
 
-  const theme :any= useContext(Initialload);
+  useContext(Initialload);
 
   return (
     <>
@@ -55,4 +54,4 @@ const mapStateToProps = (state: any) => ({
   local_varaiable: state
 });
 
-export default connect(mapStateToProps, {ThemeChanger})(Layout);
+export default connect(mapStateToProps)(Layout);
