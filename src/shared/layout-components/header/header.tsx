@@ -4,7 +4,6 @@ import React, { Fragment, useEffect, useState } from 'react';
 import { ThemeChanger } from "../../redux/action";
 import { connect } from 'react-redux';
 import store from '@/shared/redux/store';
-import Modalsearch from '../modal-search/modalsearch';
 import  basePath from '../../../../next.config'
 
 const Header = ({ local_varaiable, ThemeChanger }:any) => {
