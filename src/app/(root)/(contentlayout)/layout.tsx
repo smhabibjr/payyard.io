@@ -10,7 +10,7 @@ import {  connect } from "react-redux"
 
 const Layout = ({children,}:any) => {
 
-  const [MyclassName, setMyClass] = useState("");
+  const [, setMyClass] = useState("");
 
   const Bodyclickk = () => {
     const theme = store.getState();
