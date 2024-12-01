@@ -1,6 +1,6 @@
 "use client"
 import "./dashboard.scss";
-import React, { useContext, useEffect, useMemo, useState } from 'react'
+import React, { useContext } from 'react'
 import { connect } from 'react-redux';
 import { ThemeChanger } from '@/shared/redux/action';
 import { Initialload } from '@/shared/contextapi';

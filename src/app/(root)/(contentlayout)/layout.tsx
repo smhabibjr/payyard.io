@@ -3,7 +3,6 @@ import PrelineScript from "@/app/PrelineScript"
 import Backtotop from "@/shared/layout-components/backtotop/backtotop"
 import Header from "@/shared/layout-components/header/header"
 import Sidebar from "@/shared/layout-components/sidebar/sidebar"
-import Switcher from "@/shared/layout-components/switcher/switcher"
 import { ThemeChanger } from "@/shared/redux/action"
 import store from "@/shared/redux/store"
 import { Fragment,  useState } from "react"
@@ -28,7 +27,6 @@ const Layout = ({children,}:any) => {
   return (
     <>
     <Fragment>
-        <Switcher/>
       <div className='page'>
         <Header/>
         <Sidebar/>

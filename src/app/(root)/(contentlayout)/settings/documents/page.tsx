@@ -1,14 +1,9 @@
 "use client"
-import {  Manageinvoicedata } from '@/shared/data/pages/invoice/invoicelistdata'
 import Pageheader from '@/shared/layout-components/page-header/pageheader'
 import Seo from '@/shared/layout-components/seo/seo'
-import dynamic from 'next/dynamic';
-import Link from 'next/link'
 import React, { Fragment, useState } from 'react';
-const CountUp = dynamic(() => import("react-countup"), { ssr: false });
-const ReactApexChart = dynamic(() => import("react-apexcharts"), { ssr: false });
-import * as Invoicedata from "@/shared/data/pages/invoice/invoicelistdata";
 import { FaPlus, FaEye, FaTrash, FaIdCard, FaPassport } from 'react-icons/fa'
+import Image from 'next/image';
 
 interface Document {
     id: string
@@ -256,7 +251,7 @@ const UserDocument = () => {
                         <div>
                         <h6 className="font-semibold mb-2">Front Side</h6>
                         {previewDocument.frontSide ? (
-                            <img
+                            <Image
                             src={URL.createObjectURL(previewDocument.frontSide)}
                             alt="Front side of document"
                             className="w-full h-auto object-cover rounded-md"
@@ -270,7 +265,7 @@ const UserDocument = () => {
                         <div>
                         <h6 className="font-semibold mb-2">Back Side</h6>
                         {previewDocument.backSide ? (
-                            <img
+                            <Image
                             src={URL.createObjectURL(previewDocument.backSide)}
                             alt="Back side of document"
                             className="w-full h-auto object-cover rounded-md"

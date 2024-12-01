@@ -13,8 +13,6 @@ import { MenuItems } from "./nav";
 const Sidebar = ({ local_varaiable, ThemeChanger }: any) => {
 	const [menuitems, setMenuitems] = useState(MenuItems);
 
-	const path = usePathname()	
-
 	function closeMenu() {
 		const closeMenudata = (items: any) => {
 			items?.forEach((item: any) => {
@@ -47,7 +45,6 @@ const Sidebar = ({ local_varaiable, ThemeChanger }: any) => {
 		};
 	}, []);
 
-	const router = useRouter();
 	const pathname = usePathname()
 
 	function Onhover() {
