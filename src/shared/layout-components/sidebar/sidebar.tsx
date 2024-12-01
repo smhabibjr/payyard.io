@@ -7,7 +7,7 @@ import  basePath from '../../../../next.config'
 import store from "@/shared/redux/store";
 import SimpleBar from 'simplebar-react';
 import Menuloop from "./menuloop";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 import { MenuItems } from "./nav";
 
 const Sidebar = ({ local_varaiable, ThemeChanger }: any) => {
