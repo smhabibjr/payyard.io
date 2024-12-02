@@ -15,13 +15,13 @@ function HowWorks() {
   const data: StepItem[] = [
     {
       id: 1,
-      icon: <Image src={send_invoice} alt="Send Invoice Icon" width={150} height={100} className="rounded-lg" unoptimized />,
+      icon: <Image src={send_invoice} alt="Send Invoice Icon" width={150} height={100} className="rounded-lg" />,
       title: "Generate and Send Invoices",
       description: "Easily create customized invoices and send them directly to your foreign clients.",
     },
     {
       id: 2,
-      icon: <Image src={receive_payment} alt="Receive Payment Icon" width={100} height={100} className="rounded-lg" unoptimized />,
+      icon: <Image src={receive_payment} alt="Receive Payment Icon" width={100} height={100} className="rounded-lg" />,
       title: "Receive Payments",
       description: "Payments made by clients are credited to your Payyard.io account for secure processing.",
     },
