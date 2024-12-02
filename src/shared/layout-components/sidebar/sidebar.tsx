@@ -633,7 +633,7 @@ const Sidebar = ({ local_varaiable, ThemeChanger }: any) => {
 			<aside className="app-sidebar" id="sidebar" onMouseOver={() => Onhover()}
 				onMouseLeave={() => Outhover()}>
 				<div className="main-sidebar-header">
-					<Link href="/dashboards/crm/" className="header-logo">
+					<Link href="/dashboard/overview" className="header-logo">
 						<Image width={100} height={35} src={`${process.env.NODE_ENV === "production" ? basePath : ""}/assets/images/brand-logos/desktop-logo.png`} alt="logo" className="main-logo desktop-logo" />
 						<Image width={36} height={36}  src={`${process.env.NODE_ENV === "production" ? basePath : ""}/assets/images/brand-logos/toggle-logo.png`} alt="logo" className="main-logo toggle-logo" />
 						<Image width={91} height={32}  src={`${process.env.NODE_ENV === "production" ? basePath : ""}/assets/images/brand-logos/desktop-dark.png`} alt="logo" className="main-logo desktop-dark" />
