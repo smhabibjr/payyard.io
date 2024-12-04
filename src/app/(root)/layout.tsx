@@ -1,57 +1,70 @@
-"use client"
-import "./dashboard.scss";
-import React, { useContext } from 'react'
-import { connect } from 'react-redux';
-import { Initialload } from '@/shared/contextapi';
+// src/app/(root)/layout.tsx
+"use client";
 
-function Layout({children, local_varaiable}:any) {
-  const customstyles :any= {
-    ...(local_varaiable.colorPrimaryRgb !== '' && { '--primary-rgb': local_varaiable.colorPrimaryRgb }),
-    ...(local_varaiable.colorPrimary !== '' && { '--primary': local_varaiable.colorPrimary }),
-    ...(local_varaiable.darkBg !== '' && { '--dark-bg': local_varaiable.darkBg }),
-    ...(local_varaiable.bodyBg !== '' && { '--body-bg': local_varaiable.bodyBg }),
-    ...(local_varaiable.inputBorder !== '' && { '--input-border': local_varaiable.inputBorder }),
-    ...(local_varaiable.Light !== '' && { '--light': local_varaiable.Light }),
+import "./dashboard.scss";
+import React from "react";
+import { useSelector, shallowEqual } from "react-redux";
+
+export default function Layout({ children }: { children: React.ReactNode }) {
+  const local_variable = useSelector(
+    (state: any) => ({
+      dir: state.dir,
+      class: state.class,
+      dataHeaderStyles: state.dataHeaderStyles,
+      dataVerticalStyle: state.dataVerticalStyle,
+      dataNavLayout: state.dataNavLayout,
+      dataMenuStyles: state.dataMenuStyles,
+      dataToggled: state.dataToggled,
+      dataNavStyle: state.dataNavStyle,
+      horStyle: state.horStyle,
+      dataPageStyle: state.dataPageStyle,
+      dataWidth: state.dataWidth,
+      dataMenuPosition: state.dataMenuPosition,
+      dataHeaderPosition: state.dataHeaderPosition,
+      iconOverlay: state.iconOverlay,
+      bgImg: state.bgImg,
+      iconText: state.iconText,
+      body: state.body,
+      colorPrimaryRgb: state.colorPrimaryRgb,
+      colorPrimary: state.colorPrimary,
+      darkBg: state.darkBg,
+      bodyBg: state.bodyBg,
+      inputBorder: state.inputBorder,
+      Light: state.Light,
+    }),
+    shallowEqual // This line ensures that the selector compares the selected values shallowly
+  );
+
+  const customstyles: React.CSSProperties = {
+    ...(local_variable.colorPrimaryRgb && { "--primary-rgb": local_variable.colorPrimaryRgb }),
+    ...(local_variable.colorPrimary && { "--primary": local_variable.colorPrimary }),
+    ...(local_variable.darkBg && { "--dark-bg": local_variable.darkBg }),
+    ...(local_variable.bodyBg && { "--body-bg": local_variable.bodyBg }),
+    ...(local_variable.inputBorder && { "--input-border": local_variable.inputBorder }),
+    ...(local_variable.Light && { "--light": local_variable.Light }),
   };
 
-  useContext(Initialload);
-
   return (
-    <>
-         <html
-            suppressHydrationWarning={true} 
-            dir={local_varaiable.dir}
-            className={local_varaiable.class}
-            data-header-styles={local_varaiable.dataHeaderStyles}
-            data-vertical-style={local_varaiable.dataVerticalStyle}
-            data-nav-layout={local_varaiable.dataNavLayout}
-            data-menu-styles={local_varaiable.dataMenuStyles}
-            data-toggled={local_varaiable.dataToggled}
-            data-nav-style={local_varaiable.dataNavStyle}
-            hor-style={local_varaiable.horStyle}
-            data-page-style={local_varaiable.dataPageStyle}
-            data-width={local_varaiable.dataWidth}
-            data-menu-position={local_varaiable.dataMenuPosition}
-            data-header-position={local_varaiable.dataHeaderPosition}
-            data-icon-overlay={local_varaiable.iconOverlay}
-            bg-img={local_varaiable.bgImg}
-            data-icon-text={local_varaiable.iconText}
-
-            //Styles
-            style={customstyles}>
-              <head>
-              <meta name="keywords" content=" nextjs app router, nextjs template, tailwind nextjs, next js themes, next js tailwind,  tailwind, admin, tailwindcss nextjs, nextjs admin templates, tailwind admin template, nextjs admin template, nextjs typescript, admin template, tailwind dashboard, tailwind css dashboard" />
-              </head>
-             <body className={`${local_varaiable.body ? local_varaiable.body : ''}`}>
-              {children}
-             </body>
-          </html>
-    </>
-  )
+    <div
+      dir={local_variable.dir}
+      className={local_variable.class}
+      data-header-styles={local_variable.dataHeaderStyles}
+      data-vertical-style={local_variable.dataVerticalStyle}
+      data-nav-layout={local_variable.dataNavLayout}
+      data-menu-styles={local_variable.dataMenuStyles}
+      data-toggled={local_variable.dataToggled}
+      data-nav-style={local_variable.dataNavStyle}
+      data-hor-style={local_variable.horStyle}
+      data-page-style={local_variable.dataPageStyle}
+      data-width={local_variable.dataWidth}
+      data-menu-position={local_variable.dataMenuPosition}
+      data-header-position={local_variable.dataHeaderPosition}
+      data-icon-overlay={local_variable.iconOverlay}
+      data-bg-img={local_variable.bgImg}
+      data-icon-text={local_variable.iconText}
+      style={customstyles}
+    >
+      {children}
+    </div>
+  );
 }
-
-const mapStateToProps = (state: any) => ({
-  local_varaiable: state
-});
-
-export default connect(mapStateToProps)(Layout);

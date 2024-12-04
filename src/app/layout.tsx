@@ -1,24 +1,21 @@
-"use client"
-import { Provider } from "react-redux";
-import store from "@/shared/redux/store";
+import { Providers } from "./providers";
 import "../../public/assets/css/landing.css";
 
-/* export const metadata: Metadata = {
+export const metadata = {
   title: "Payyard.io",
-  description: "Payments getway for freelancers",
-}; */
+  description: "Payments gateway for freelancers",
+  keywords: "nextjs, payments, freelancers, gateway",
+};
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en">
       <body>
-        <Provider store={store}>
-          {children}
-        </Provider>
+        <Providers>{children}</Providers>
       </body>
     </html>
   );
