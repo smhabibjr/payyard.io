@@ -1,5 +1,5 @@
 "use client"
-import { dashboard } from '../../../public/assets/images/landingpage'
+import { dashboard } from '@public/assets/images/landingpage'
 import Image from 'next/image'
 import Link from 'next/link'
 import { motion } from 'framer-motion'

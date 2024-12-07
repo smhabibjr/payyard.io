@@ -1,5 +1,5 @@
 "use client";
-import { bill } from "../../../public/assets/images/landingpage";
+import { bill } from "@public/assets/images/landingpage";
 import Image from "next/image";
 import { motion } from "framer-motion";
 

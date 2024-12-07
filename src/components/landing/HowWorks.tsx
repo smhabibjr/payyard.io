@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image"; // Import Next.js Image component for optimized images
-import {  withdraw_funds, send_invoice, receive_payment } from "../../../public/assets/images/landingpage";
+import {  withdraw_funds, send_invoice, receive_payment } from "@public/assets/images/landingpage";
 
 type StepItem = {
   id: number;
