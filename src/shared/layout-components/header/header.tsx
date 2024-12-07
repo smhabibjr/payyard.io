@@ -1,43 +1,30 @@
-"use client";
-import Link from "next/link";
-import React, { Fragment, useEffect, useState } from "react";
-import { connect } from "react-redux";
-import store from "@/shared/redux/store";
-import Image from "next/image";
-import basePath from "../../../../next.config";
+"use client"
+import Link from 'next/link'
+import React, { Fragment, useEffect, useState } from 'react';
+import { ThemeChanger } from "../../redux/action";
+import { connect } from 'react-redux';
+import store from '@/shared/redux/store';
+import Image from 'next/image';
+import  basePath from '../../../../next.config'
 
-const Header = ({ local_varaiable }: any) => {
-  // Notifications
-  const notifydata = [
-    { id: 1, class: "Your Order Has Been Shipped", data: "Order No: 123456 Has Shipped To Your Delivery Address", icon: "gift", class2: null, color: "!bg-primary/10", color2: "primary" },
-    { id: 2, class: "Discount Available", data: "Discount Available On Selected Products", icon: "discount-2", class2: null, color: "!bg-secondary/10", color2: "secondary" },
-    { id: 3, class: "Account Has Been Verified", data: "Your Account Has Been Verified Successfully", icon: "user-check", class2: null, color: "!bg-pinkmain/10", color2: "pink" },
-    {
-      id: 4,
-      class: "Order Placed",
-      data: "Order Placed Successfully",
-      icon: "circle-check",
-      class2: { text: "ID: #1116773", className: "text-warning" },
-      color: "!bg-warning/10",
-      color2: "warning",
-    },
-    {
-      id: 5,
-      class: "Order Delayed",
-      data: "Order Delayed Unfortunately",
-      icon: "clock",
-      class2: { text: "ID: 7731116", className: "text-success" },
-      color: "!bg-success/10",
-      color2: "success",
-    },
-  ];
+const Header = ({ local_varaiable, ThemeChanger }:any) => {
+
+  //Notifications
+
+  const span1 = <span className="text-warning">ID: #1116773</span>
+  const span2 = <span className="text-success">ID: 7731116</span>
+
+ const notifydata = [
+  { id: 1, class: "Your Order Has Been Shipped", data: "Order No: 123456 Has Shipped To Your Delivery Address", icon: "gift", class2: "", color: "!bg-primary/10",color2: "primary"},
+  { id: 2, class: "Discount Available", data: "Discount Available On Selected Products", icon: "discount-2", class2: "", color: "!bg-secondary/10",color2:"secondary" },
+  { id: 3, class: "Account Has Been Verified", data: "Your Account Has Been Verified Sucessfully", icon: "user-check", class2: "", color: "!bg-pinkmain/10",color2: "pink"},
+  { id: 4, class: "Order Placed", data: "Order Placed Successfully", icon: "circle-check", class2: span1, color: "!bg-warning/10",color2: "warning"},
+  { id: 5, class: "Order Delayed", data: "Order Delayed Unfortunately", icon: "clock", class2: span2, color: "!bg-success/10",color2: "success"},
+]
 
   const [notifications, setNotifications] = useState([...notifydata]);
 
-  const handleNotificationClose = (
-    index: number,
-    event: React.MouseEvent<HTMLAnchorElement, MouseEvent>
-  ) => {
+  const handleNotificationClose = (index: number,event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
     if (event) {
       event.stopPropagation();
     }
@@ -46,7 +33,7 @@ const Header = ({ local_varaiable }: any) => {
     setNotifications(updatedNotifications);
   };
 
-  // Fullscreen functionality
+  //full screen
   const [isFullscreen, setIsFullscreen] = useState(false);
 
   const toggleFullscreen = () => {
@@ -69,13 +56,12 @@ const Header = ({ local_varaiable }: any) => {
     };
   }, []);
 
+
   useEffect(() => {
     const handleResize = () => {
       const windowObject = window;
       if (windowObject.innerWidth <= 991) {
-        // Handle mobile view
       } else {
-        // Handle desktop view
       }
     };
     handleResize(); // Check on component mount
@@ -85,13 +71,14 @@ const Header = ({ local_varaiable }: any) => {
     };
   }, []);
 
+
   function menuClose() {
     const theme = store.getState();
     if (window.innerWidth <= 992) {
-      // ThemeChanger code removed
+      ThemeChanger({ ...theme, dataToggled: "close" });
     }
     if (window.innerWidth >= 992) {
-      // ThemeChanger code removed
+      ThemeChanger({ ...theme, dataToggled: local_varaiable.dataToggled ? local_varaiable.dataToggled : '' });
     }
   }
 
@@ -105,96 +92,108 @@ const Header = ({ local_varaiable }: any) => {
         switch (verticalStyle) {
           // closed
           case "closed":
-            // ThemeChanger code removed
+            ThemeChanger({ ...theme, "dataNavStyle": "" });
             if (theme.dataToggled === "close-menu-close") {
-              // ThemeChanger code removed
+              ThemeChanger({ ...theme, "dataToggled": "" });
             } else {
-              // ThemeChanger code removed
+              ThemeChanger({ ...theme, "dataToggled": "close-menu-close" });
             }
             break;
           // icon-overlay
           case "overlay":
-            // ThemeChanger code removed
+            ThemeChanger({ ...theme, "dataNavStyle": "" });
             if (theme.dataToggled === "icon-overlay-close") {
-              // ThemeChanger code removed
+              ThemeChanger({ ...theme, "dataToggled": "","iconOverlay" :''});
             } else {
               if (window.innerWidth >= 992) {
-                // ThemeChanger code removed
+                ThemeChanger({ ...theme, "dataToggled": "icon-overlay-close","iconOverlay" :'' });
               }
             }
             break;
           // icon-text
           case "icontext":
-            // ThemeChanger code removed
+            ThemeChanger({ ...theme, "dataNavStyle": "" });
             if (theme.dataToggled === "icon-text-close") {
-              // ThemeChanger code removed
+              ThemeChanger({ ...theme, "dataToggled": "" });
             } else {
-              // ThemeChanger code removed
+              ThemeChanger({ ...theme, "dataToggled": "icon-text-close" });
             }
             break;
           // doublemenu
           case "doublemenu":
-            // ThemeChanger code removed
-            if (theme.dataToggled === "double-menu-open") {
-              // ThemeChanger code removed
-            } else {
-              const sidemenu = document.querySelector(".side-menu__item.active");
-              if (sidemenu) {
-                // ThemeChanger code removed
-                if (sidemenu.nextElementSibling) {
-                  sidemenu.nextElementSibling.classList.add("double-menu-active");
-                } else {
-                  // ThemeChanger code removed
+            ThemeChanger({ ...theme, "dataNavStyle": "" });
+            ThemeChanger({ ...theme, "dataNavStyle": "" });
+              if (theme.dataToggled === "double-menu-open") {
+                ThemeChanger({ ...theme, "dataToggled": "double-menu-close" });
+              } else {
+                const sidemenu = document.querySelector(".side-menu__item.active");
+                if (sidemenu) {
+                  ThemeChanger({ ...theme, "dataToggled": "double-menu-open" });
+                  if (sidemenu.nextElementSibling) {
+                    sidemenu.nextElementSibling.classList.add("double-menu-active");
+                  } else {
+
+                    ThemeChanger({ ...theme, "dataToggled": "double-menu-close" });
+                  }
                 }
               }
-            }
+            // doublemenu(ThemeChanger);
             break;
           // detached
           case "detached":
             if (theme.dataToggled === "detached-close") {
-              // ThemeChanger code removed
+              ThemeChanger({ ...theme, "dataToggled": "","iconOverlay" :'' });
             } else {
-              // ThemeChanger code removed
+              ThemeChanger({ ...theme, "dataToggled": "detached-close","iconOverlay" :'' });
             }
+            
             break;
+
           // default
           case "default":
-            // ThemeChanger code removed
+            ThemeChanger({ ...theme, "dataToggled": "" });
         }
         switch (navStyle) {
           case "menu-click":
             if (theme.dataToggled === "menu-click-closed") {
-              // ThemeChanger code removed
-            } else {
-              // ThemeChanger code removed
+              ThemeChanger({ ...theme, "dataToggled": "" });
+            }
+            else {
+              ThemeChanger({ ...theme, "dataToggled": "menu-click-closed" });
             }
             break;
+          // icon-overlay
           case "menu-hover":
             if (theme.dataToggled === "menu-hover-closed") {
-              // ThemeChanger code removed
+              ThemeChanger({ ...theme, "dataToggled": "" });
             } else {
-              // ThemeChanger code removed
+              ThemeChanger({ ...theme, "dataToggled": "menu-hover-closed"});
+
             }
             break;
           case "icon-click":
             if (theme.dataToggled === "icon-click-closed") {
-              // ThemeChanger code removed
+              ThemeChanger({ ...theme, "dataToggled": "" });
             } else {
-              // ThemeChanger code removed
+              ThemeChanger({ ...theme, "dataToggled": "icon-click-closed" });
+
             }
             break;
           case "icon-hover":
             if (theme.dataToggled === "icon-hover-closed") {
-              // ThemeChanger code removed
+              ThemeChanger({ ...theme, "dataToggled": "" });
             } else {
-              // ThemeChanger code removed
+              ThemeChanger({ ...theme, "dataToggled": "icon-hover-closed" });
+
             }
             break;
+
         }
       }
-    } else {
+    }
+    else {
       if (theme.dataToggled === "close") {
-        // ThemeChanger code removed
+        ThemeChanger({ ...theme, "dataToggled": "open" });
 
         setTimeout(() => {
           if (theme.dataToggled == "open") {
@@ -224,15 +223,17 @@ const Header = ({ local_varaiable }: any) => {
           });
         }, 100);
       } else {
-        // ThemeChanger code removed
+        ThemeChanger({ ...theme, "dataToggled": "close" });
       }
     }
   };
 
+
   useEffect(() => {
     const navbar = document?.querySelector(".header");
     const navbar1 = document?.querySelector(".app-sidebar");
-    const sticky: any = navbar?.clientHeight;
+    const sticky:any = navbar?.clientHeight;
+    // const sticky1 = navbar1.clientHeight;
 
     function stickyFn() {
       if (window.pageYOffset >= sticky) {
@@ -303,8 +304,8 @@ const Header = ({ local_varaiable }: any) => {
                   </div>
                   <div className="dropdown-divider"></div>
                   <ul className="list-none !m-0 !p-0 end-0" id="header-notification-scroll">
-                    {notifications.map((idx, index) => (
-                      <li className="ti-dropdown-item dropdown-item" key={idx.id}>
+                  {notifications.map((idx, index) => (
+                      <li className="ti-dropdown-item dropdown-item" key={Math.random()}>
                         <div className="flex items-start">
                           <div className="pe-2">
                             <span
@@ -313,14 +314,9 @@ const Header = ({ local_varaiable }: any) => {
                           </div>
                           <div className="grow flex items-center justify-between">
                             <div>
-                              <p className="mb-0 text-defaulttextcolor dark:text-white text-[0.8125rem] font-semibold">
-                                <Link href="#!">
-                                  {idx.class}{" "}
-                                  {idx.class2 && (
-                                    <span className={idx.class2.className}>{idx.class2.text}</span>
-                                  )}
-                                </Link>
-                              </p>
+                              <p className="mb-0 text-defaulttextcolor dark:text-white text-[0.8125rem] font-semibold"><Link
+                                href="#!">{idx.class} {idx.class2}</Link></p>
+                              <span className="text-[#8c9097] dark:text-white/50 font-normal text-[0.75rem] header-notification-text">{idx.data}</span>
                             </div>
                             <div>
                               <Link aria-label="anchor" href="#!" scroll={false} className="min-w-fit text-[#8c9097] dark:text-white/50 me-1 dropdown-item-close1" onClick={(event) => handleNotificationClose(index, event)}><i
@@ -349,7 +345,7 @@ const Header = ({ local_varaiable }: any) => {
               </div>
 
               <div className="header-element header-fullscreen py-[1rem] md:px-[0.65rem] px-2">
-                <button
+              <button
                   aria-label="anchor"
                   onClick={() => toggleFullscreen()}
                   className="inline-flex flex-shrink-0 justify-center items-center gap-2  !rounded-full font-medium dark:hover:bg-black/20 dark:text-[#8c9097] dark:text-white/50 dark:hover:text-white dark:focus:ring-white/10 dark:focus:ring-offset-white/10"
@@ -363,6 +359,7 @@ const Header = ({ local_varaiable }: any) => {
               </div>
 
               <div className="header-element md:!px-[0.65rem] px-2 hs-dropdown !items-center ti-dropdown [--placement:bottom-left]">
+
                 <button id="dropdown-profile" type="button"
                   className="hs-dropdown-toggle ti-dropdown-toggle !gap-2 !p-0 flex-shrink-0 sm:me-2 me-0 !rounded-full !shadow-none text-xs align-middle !border-0 !shadow-transparent ">
                   <Image className="inline-block rounded-full " src={`${process.env.NODE_ENV === "production" ? basePath : ""}/assets/images/faces/9.jpg`} width="32" height="32" alt="Image Description" />
@@ -394,16 +391,17 @@ const Header = ({ local_varaiable }: any) => {
                   </ul>
                 </div>
               </div>
-
+              
             </div>
           </div>
         </nav>
       </div>
+      
     </Fragment>
-  );
-};
+  )
+}
 
-const mapStateToProps = (state: any) => ({
-  local_varaiable: state,
+const mapStateToProps = (state:any) => ({
+  local_varaiable: state
 });
-export default connect(mapStateToProps)(Header);
+export default connect(mapStateToProps, { ThemeChanger })(Header);
