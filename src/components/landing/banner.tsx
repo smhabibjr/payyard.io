@@ -1,5 +1,5 @@
 "use client"
-import { dashboard } from '../../../public/images'
+import { dashboard } from '../../../public/assets/images/landingpage'
 import Image from 'next/image'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
@@ -75,7 +75,7 @@ function Banner() {
                 whileInView={{ y: 0, opacity: 1 }}
                 transition={{ duration: 1, ease: "easeOut" }}
             >
-                <Image src={dashboard} alt="software dashboard" />
+                <Image src={dashboard} alt="payyard.io dashboard" priority />
             </motion.div>
         </div>
         </>

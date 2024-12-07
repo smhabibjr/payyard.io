@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link'; // Import Link from Next.js
-import { payyard_logo_blue } from '../../../public/images';
+import { payyard_logo_blue } from '../../../public/assets/images/landingpage';
 
 const SignUpPage: React.FC = () => {
   return (

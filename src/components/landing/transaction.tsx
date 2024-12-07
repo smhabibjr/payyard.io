@@ -2,7 +2,7 @@
 import { MdCheck } from "react-icons/md";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { dash1, dash2, dash3, dash4, dash5, dash6 } from "../../../public/images";
+import { dash1, dash2, dash3, dash4, dash5, dash6 } from "../../../public/assets/images/landingpage";
 
 type TransactionItem = {
   id: number;

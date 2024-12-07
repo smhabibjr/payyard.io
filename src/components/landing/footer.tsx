@@ -1,5 +1,5 @@
 import { FC } from "react"; // Import FC from React
-import { payyard_logo_white, facebook_logo, instagram_logo, twitter_logo, linkedin_logo } from "../../../public/images";
+import { payyard_logo_white, facebook_logo, instagram_logo, twitter_logo, linkedin_logo } from "@public/assets/images/landingpage";
 import Image from "next/image";
 
 interface FooterLink {
@@ -27,7 +27,7 @@ const Footer: FC = () => {
         <div className="bg-btnDark w-full py-14">
             <div className="w-full xl:w-container mx-auto px-8 text-gray-400 lg:grid grid-cols-2 text-sm">
                 <div className="mr-0 lg:mr-40">
-                    <Image className="" src={payyard_logo_white} alt="Payyard.io" width="200" height="200" />
+                    <Image className="" src={payyard_logo_white} alt="Payyard.io" width="200" height="200" style={{ width: "auto", height: "auto" }} priority />
                     <p className="my-8 leading-relaxed">
                     Our mission is simple: empower freelancers and small business owners to get paid easily, accessibly, and globally. No more limitations—only growth and opportunity.
                     </p>

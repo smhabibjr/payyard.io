@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import { payyard_logo_blue } from '../../../public/images';
+import { payyard_logo_blue } from '../../../public/assets/images/landingpage';
 
 const ResetYourPasswordPage: React.FC = () => {
   const router = useRouter();

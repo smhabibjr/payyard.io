@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { payyard_logo_white } from "../../../public/images";
+import { payyard_logo_white } from "@public/assets/images/landingpage";
 import Link from "next/link";
 
 const Navbar: React.FC = () => {
@@ -7,7 +7,7 @@ const Navbar: React.FC = () => {
         <div className="w-full 2xl:w-large px-6 lg:px-28 2xl:px-0 mx-auto flex justify-between items-center pt-6 lg:pt-10">
             <div className="" >
                 <Link href="/">
-                    <Image src={payyard_logo_white} alt="logo fintech" width="250" height="250"  />
+                    <Image src={payyard_logo_white} alt="logo fintech" width="250" height="250" style={{ width: "auto", height: "auto" }} priority />
                 </Link>
             </div>
             
