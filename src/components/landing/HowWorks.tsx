@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image"; // Import Next.js Image component for optimized images
-import {  withdraw_funds, send_invoice, receive_payment } from "../../../public/images";
+import {  withdraw_funds, send_invoice, receive_payment } from "@public/assets/images/landingpage";
 
 type StepItem = {
   id: number;
@@ -15,19 +15,19 @@ function HowWorks() {
   const data: StepItem[] = [
     {
       id: 1,
-      icon: <Image src={send_invoice} alt="Send Invoice Icon" width={150} height={100} className="rounded-lg" />,
+      icon: <Image unoptimized src={send_invoice} alt="Send Invoice Icon" width={150} height={100} style={{ width: "auto", height: "auto" }}  className="rounded-lg" priority  />,
       title: "Generate and Send Invoices",
       description: "Easily create customized invoices and send them directly to your foreign clients.",
     },
     {
       id: 2,
-      icon: <Image src={receive_payment} alt="Receive Payment Icon" width={100} height={100} className="rounded-lg" />,
+      icon: <Image unoptimized src={receive_payment} alt="Receive Payment Icon" width={100} height={100} style={{ width: "auto", height: "auto" }}  className="rounded-lg" priority  />,
       title: "Receive Payments",
       description: "Payments made by clients are credited to your Payyard.io account for secure processing.",
     },
     {
       id: 3,
-      icon: <Image src={withdraw_funds} alt="Receive Payment Icon" width={100} height={100} className="rounded-lg" unoptimized />,
+      icon: <Image unoptimized src={withdraw_funds} alt="Receive Payment Icon" width={100} height={100} style={{ width: "auto", height: "auto" }}  className="rounded-lg" priority />,
       title: "Withdraw Funds",
       description: "Request to withdraw your funds to your bank in Bangladesh, hassle-free.",
     }

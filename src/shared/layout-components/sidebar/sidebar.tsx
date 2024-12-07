@@ -634,12 +634,12 @@ const Sidebar = ({ local_varaiable, ThemeChanger }: any) => {
 				onMouseLeave={() => Outhover()}>
 				<div className="main-sidebar-header">
 					<Link href="/dashboard/overview" className="header-logo">
-						<Image width={100} height={35} src={`${process.env.NODE_ENV === "production" ? basePath : ""}/assets/images/brand-logos/desktop-logo.png`} alt="logo" className="main-logo desktop-logo" />
-						<Image width={36} height={36}  src={`${process.env.NODE_ENV === "production" ? basePath : ""}/assets/images/brand-logos/toggle-logo.png`} alt="logo" className="main-logo toggle-logo" />
-						<Image width={91} height={32}  src={`${process.env.NODE_ENV === "production" ? basePath : ""}/assets/images/brand-logos/desktop-dark.png`} alt="logo" className="main-logo desktop-dark" />
-						<Image width={36} height={36}  src={`${process.env.NODE_ENV === "production" ? basePath : ""}/assets/images/brand-logos/toggle-dark.png`} alt="logo" className="main-logo toggle-dark" />
-						<Image width={100} height={35} src={`${process.env.NODE_ENV === "production" ? basePath : ""}/assets/images/brand-logos/desktop-white.png`} alt="logo" className="main-logo desktop-white" />
-						<Image width={36} height={36}  src={`${process.env.NODE_ENV === "production" ? basePath : ""}/assets/images/brand-logos/toggle-white.png`} alt="logo" className="main-logo toggle-white" />
+						<Image style={{ width: "auto", height: "auto" }} width={100} height={35} src={`${process.env.NODE_ENV === "production" ? basePath : ""}/assets/images/brand-logos/desktop-logo.png`} alt="logo" className="main-logo desktop-logo" />
+						<Image style={{ width: "auto", height: "auto" }} width={36} height={36}  src={`${process.env.NODE_ENV === "production" ? basePath : ""}/assets/images/brand-logos/toggle-logo.png`} alt="logo" className="main-logo toggle-logo" />
+						<Image style={{ width: "auto", height: "auto" }} width={91} height={32}  src={`${process.env.NODE_ENV === "production" ? basePath : ""}/assets/images/brand-logos/desktop-dark.png`} alt="logo" className="main-logo desktop-dark" />
+						<Image style={{ width: "auto", height: "auto" }} width={36} height={36}  src={`${process.env.NODE_ENV === "production" ? basePath : ""}/assets/images/brand-logos/toggle-dark.png`} alt="logo" className="main-logo toggle-dark" />
+						<Image style={{ width: "auto", height: "auto" }} width={100} height={35} src={`${process.env.NODE_ENV === "production" ? basePath : ""}/assets/images/brand-logos/desktop-white.png`} alt="logo" className="main-logo desktop-white" />
+						<Image style={{ width: "auto", height: "auto" }} width={36} height={36}  src={`${process.env.NODE_ENV === "production" ? basePath : ""}/assets/images/brand-logos/toggle-white.png`} alt="logo" className="main-logo toggle-white" />
 					</Link>
 				</div>
 

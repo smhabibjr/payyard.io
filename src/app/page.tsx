@@ -14,7 +14,7 @@ export default function Home() {
   return (
     <div className="font-Poppins">
       <Head>
-        <title>Fintech - Home</title>
+        <title>Payyard.io - Home</title>
         <link rel="icon" href="/favicon.png" />
       </Head>
 
