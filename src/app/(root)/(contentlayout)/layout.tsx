@@ -3,12 +3,11 @@ import PrelineScript from "@/app/PrelineScript"
 import Backtotop from "@/shared/layout-components/backtotop/backtotop"
 import Header from "@/shared/layout-components/header/header"
 import Sidebar from "@/shared/layout-components/sidebar/sidebar"
-import { ThemeChanger } from "@/shared/redux/action"
 import store from "@/shared/redux/store"
 import { Fragment,  useState } from "react"
 import {  connect } from "react-redux"
 
-const Layout = ({children,}:any) => {
+const Layout = ({ children }: any) => {
 
   const [, setMyClass] = useState("");
 
@@ -19,28 +18,26 @@ const Layout = ({children,}:any) => {
     }
     if (window.innerWidth > 992) {
       if (theme.iconOverlay === 'open') {
-        ThemeChanger({ ...theme, iconOverlay: "" });
+        // Do nothing since ThemeChanger is removed
       }
     }
   }
 
   return (
     <>
-    <Fragment>
-      <div className='page'>
-        <Header/>
-        <Sidebar/>
-        <div className='content'>
-          <div className='main-content'  
-          onClick={Bodyclickk}
-          >
-            {children}
+      <Fragment>
+        <div className='page'>
+          <Header />
+          <Sidebar />
+          <div className='content'>
+            <div className='main-content' onClick={Bodyclickk}>
+              {children}
+            </div>
           </div>
         </div>
-      </div>
-      <Backtotop/>
-      <PrelineScript/>
-    </Fragment>
+        <Backtotop />
+        <PrelineScript />
+      </Fragment>
     </>
   )
 }
@@ -49,4 +46,4 @@ const mapStateToProps = (state: any) => ({
   local_varaiable: state
 });
 
-export default connect(mapStateToProps, { ThemeChanger})(Layout);
+export default connect(mapStateToProps)(Layout);
